@@ -48,16 +48,46 @@ const tiers = [
 const availableTimes = ['10:00 AM EAT', '02:00 PM EAT', '04:30 PM EAT', '07:00 PM EAT'];
 
 export default function Investors() {
-  const [selectedDate, setSelectedDate] = useState('2026-03-02');
+  const [selectedDate, setSelectedDate] = useState('2026-08-25');
   const [selectedTime, setSelectedTime] = useState('02:00 PM EAT');
   const [investorName, setInvestorName] = useState('');
   const [investorEmail, setInvestorEmail] = useState('');
   const [commentary, setCommentary] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleBooking = (e: React.FormEvent) => {
+  const handleBooking = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/zabibutechnika@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: `New Investor Briefing Request: ${investorName}`,
+          Investor_Name: investorName,
+          Investor_Email: investorEmail,
+          Requested_Date: selectedDate,
+          Requested_Time: selectedTime,
+          Commentary: commentary,
+          Source: 'Zabibu Technika Investor Portal',
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+      } else {
+        alert('Transmission failed. Please email zabibutechnika@gmail.com directly.');
+      }
+    } catch {
+      alert('Network issue. Please reach out to zabibutechnika@gmail.com directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -129,14 +159,14 @@ export default function Investors() {
           <span className="tag">DIRECT ENGAGEMENT</span>
           <h3 className="text-2xl font-bold text-white mt-4">Schedule a Founder Session & Discussion</h3>
           <p className="text-sm text-muted-foreground mt-1">
-            Book an introduction with founder Tehillah Mwangada Kachila. No external scheduling tools required.
+            Book an introduction with founder Tehillah Mwangada Kachila. Submissions dispatch directly to the executive office.
           </p>
 
           {submitted ? (
             <div className="my-8 p-6 rounded-xl bg-amber-500/10 border border-amber-500/30 text-center">
-              <p className="text-base font-bold text-amber-400">Briefing Request Dispatched</p>
+              <p className="text-base font-bold text-amber-400">Briefing Request Dispatched to Founder</p>
               <p className="text-xs text-zinc-300 mt-2">
-                Thank you, {investorName}. Your reserved slot on {selectedDate} at {selectedTime} along with your note has been logged directly with the executive office.
+                Thank you, {investorName}. Your reserved slot on {selectedDate} at {selectedTime} along with your note has been forwarded directly to zabibutechnika@gmail.com.
               </p>
             </div>
           ) : (
@@ -213,8 +243,12 @@ export default function Investors() {
                   />
                 </div>
 
-                <button type="submit" className="glow-button w-full py-3.5 text-xs font-bold uppercase tracking-wider mt-2">
-                  Confirm Briefing & Send Commentary ↗
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="glow-button w-full py-3.5 text-xs font-bold uppercase tracking-wider mt-2 disabled:opacity-50"
+                >
+                  {isSubmitting ? 'Transmitting to Zabibu...' : 'Confirm Briefing & Send Commentary ↗'}
                 </button>
               </div>
             </form>
