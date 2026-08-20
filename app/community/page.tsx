@@ -95,7 +95,7 @@ export default function Community() {
             <p className="text-xs text-muted-foreground mt-2">
               Instant product drops, patch notes, voice dispatches, and direct founder signals.
             </p>
-            <span className="text-xs font-bold text-emerald-400 mt-6 inline-block">Join 400+ Members ↗</span>
+            <span className="text-xs font-bold text-emerald-400 mt-6 inline-block">Join us ↗</span>
           </a>
 
           <a
