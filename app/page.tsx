@@ -1,47 +1,73 @@
+'use client'
+
+import { useEffect, useState } from 'react'
+import { motion } from 'framer-motion'
+import { ArrowUpRight, BrainCircuit, Check, CircleDollarSign, Cpu, ExternalLink, Menu, Radio, Send, Sparkles, X, Zap } from 'lucide-react'
+
+const links = {
+  arif: 'https://bit.ly/zabibuarif',
+  payd: 'https://app.payd.money/link/zabibu',
+  whatsapp: 'https://whatsapp.com/channel/0029VbC0Nnj5a248TWBGLk2s',
+}
+
+const portals = [
+  { title: 'Zabibu ARIF', tag: 'FLAGSHIP SYSTEM', text: 'Socratic Diagnostic AI running ultra-low resource engines down to Android 7.', href: links.arif, icon: BrainCircuit, featured: true },
+  { title: 'ZabibuOS', tag: 'PROOF OF CONCEPT', text: 'Elemental computing interface — Hewani, Ardhi, Maji, Moto — guiding sovereign hardware.', href: 'https://zabibu.lovable.app', icon: Cpu },
+  { title: 'Sigana', tag: 'EARLY DEV', text: 'Community-first TV, media center, and ambient streaming portal.', href: 'https://sigana.lovable.app', icon: Radio },
+  { title: 'Zabibu-Fikra-2B', tag: 'OPEN WEIGHTS', text: '2B parameter open reasoning weights for the next generation of African builders.', href: 'https://huggingface.co/zabibutechnika/Zabibu-Fikra-2B', icon: Sparkles },
+  { title: 'Zabibu Biscuit', tag: 'BIZKIT', text: 'Offline-first mobile commerce and peer sync for African SMBs and freelancers.', icon: CircleDollarSign },
+  { title: 'Ella Journal', tag: 'LOCAL-FIRST', text: 'A private, local-first encrypted wellness journal for tending to your inner world.', href: 'https://heyella.netlify.app', icon: Sparkles },
+]
+
+const fallbackPosts = [
+  { title: 'Why software should guide hardware', date: 'Jun 18, 2026', excerpt: 'A field note on resilience, local context, and building tools that respect the machines they run on.', link: 'https://medium.com/@zabibutechnika' },
+  { title: 'The shape of a sovereign cognitive engine', date: 'May 30, 2026', excerpt: 'Inside the constraints that made ARIF smaller, stranger, and more useful.', link: 'https://medium.com/@zabibutechnika' },
+  { title: 'Dispatches from the low-spec frontier', date: 'Apr 12, 2026', excerpt: 'What we learn when the fastest device in the room is not the target device.', link: 'https://medium.com/@zabibutechnika' },
+]
+
 export default function Page() {
+  const [posts, setPosts] = useState(fallbackPosts)
+  const [email, setEmail] = useState('')
+  const [subscribed, setSubscribed] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [diagnostic, setDiagnostic] = useState(true)
+
+  useEffect(() => {
+    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@zabibutechnika')
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.items?.length) setPosts(data.items.slice(0, 3).map((item: { title: string; pubDate: string; description: string; link: string }) => ({ title: item.title, date: new Date(item.pubDate).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }), excerpt: item.description.replace(/<[^>]*>/g, '').slice(0, 145) + '…', link: item.link })))
+      }).catch(() => undefined)
+  }, [])
+
   return (
-    <main
-      style={{
-        colorScheme: 'light dark',
-        position: 'relative',
-        display: 'flex',
-        minHeight: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'light-dark(#fff, #000)',
-        color: 'light-dark(#000, #fff)',
-      }}
-    >
-      <svg
-        aria-hidden="true"
-        style={{ width: 80, height: 80 }}
-        width={80}
-        height={80}
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 'calc(50% + 56px)',
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          fontSize: '14px',
-          fontWeight: 500,
-          color: 'light-dark(#71717a, #a1a1aa)',
-        }}
-      >
-        Your v0 generation will show here.
-      </p>
+    <main className="min-h-screen overflow-hidden bg-background text-foreground">
+      <div className="noise" aria-hidden="true" />
+      <nav className="sticky top-0 z-50 border-b border-white/10 bg-background/75 px-5 py-4 backdrop-blur-xl md:px-10">
+        <div className="mx-auto flex max-w-7xl items-center justify-between">
+          <a href="#top" className="flex items-center gap-3 font-black tracking-[0.18em]"><span className="grape-mark">Z</span><span className="hidden text-sm sm:inline">ZABIBU TECHNIKA</span></a>
+          <div className="hidden items-center gap-8 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground md:flex"><a href="#arif" className="hover:text-foreground">ARIF <span className="text-primary">(Flagship)</span></a><a href="#ecosystem" className="hover:text-foreground">Ecosystem</a><a href="#dispatches" className="hover:text-foreground">Dispatches</a><a href="#support" className="hover:text-foreground">Support Us</a></div>
+          <div className="flex items-center gap-3"><div className="hidden items-center gap-3 text-muted-foreground sm:flex"><a href="https://x.com/zabibutechnika" aria-label="X"><X className="size-4" /></a><a href="https://instagram.com/zabibutechnika" aria-label="Instagram" className="text-[10px] font-bold">IG</a><a href="https://linkedin.com/c/zabibutechnika" aria-label="LinkedIn" className="text-[10px] font-bold">in</a></div><a href={links.arif} className="glow-button hidden px-4 py-2 text-xs font-bold uppercase tracking-wider sm:inline-flex"><span className="pulse-dot" /> Launch ARIF</a><button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation"><Menu /></button></div>
+        </div>
+        {menuOpen && <div className="mx-auto flex max-w-7xl flex-col gap-4 pt-5 text-sm uppercase tracking-wider md:hidden"><a href="#arif" onClick={() => setMenuOpen(false)}>ARIF</a><a href="#ecosystem" onClick={() => setMenuOpen(false)}>Ecosystem</a><a href="#dispatches" onClick={() => setMenuOpen(false)}>Dispatches</a></div>}
+      </nav>
+
+      <section id="top" className="hero-grid relative mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-24 md:px-10">
+        <div className="max-w-4xl"><motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} className="mb-7 inline-flex items-center gap-2 border border-primary/40 bg-primary/10 px-3 py-2 text-[10px] font-bold tracking-[0.2em] text-purple-200"><Zap className="size-3 text-accent" /> FLAGSHIP SYSTEM <span className="text-muted-foreground">•</span> COGNITIVE SPARRING AI</motion.div><motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="max-w-4xl text-balance text-5xl font-black leading-[0.95] tracking-[-0.06em] md:text-8xl">Software that <span className="text-gradient">breathes.</span><br />Built from Nairobi<br />for the global South.</motion.h1><p className="mt-8 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground md:text-xl">Meet Zabibu ARIF (v5.1.25x)—a sovereign cognitive engine built for sub-1MB micro-browsers, Socratic diagnostics, and low-spec hardware. We reject bloated tech in favor of raw resilience.</p><div className="mt-10 flex flex-wrap gap-4"><a href={links.arif} className="glow-button px-6 py-4 text-sm font-bold uppercase tracking-wider">Launch Zabibu ARIF <ArrowUpRight className="ml-2 inline size-4" /></a><a href={links.payd} className="outline-button px-6 py-4 text-sm font-bold uppercase tracking-wider">Support on Payd</a><a href={links.whatsapp} className="text-link px-2 py-4 text-sm font-bold uppercase tracking-wider">Join WhatsApp Channel <ArrowUpRight className="ml-1 inline size-4" /></a></div></div>
+        <div className="absolute bottom-10 right-10 hidden font-mono text-[10px] uppercase tracking-widest text-muted-foreground lg:block"><span className="text-accent">//</span> Nairobi → everywhere<br /><span className="text-primary">01</span> / 08 gateways online</div>
+      </section>
+
+      <section id="arif" className="mx-auto max-w-7xl px-5 py-10 md:px-10"><div className="portal portal-featured grid gap-8 p-7 md:grid-cols-[1.15fr_0.85fr] md:p-10"><div><div className="mb-5 flex items-center gap-3 text-xs font-bold uppercase tracking-[0.2em] text-accent"><BrainCircuit className="size-5" /> Zabibu ARIF <span className="text-muted-foreground">v5.1.25x</span></div><h2 className="text-4xl font-black tracking-tight md:text-6xl">Your thinking,<br /><span className="text-gradient">sparred.</span></h2><p className="mt-5 max-w-lg leading-7 text-muted-foreground">Socratic Diagnostic AI running ultra-low resource engines down to Android 7. Ask better questions. Find the root. Move with clarity.</p><a href={links.arif} className="mt-8 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-accent">Open ARIF Portal <ArrowUpRight className="size-4" /></a></div><div className="diagnostic-panel"><div className="flex items-center justify-between border-b border-white/10 pb-4 text-[10px] uppercase tracking-widest text-muted-foreground"><span>diagnostic mode</span><button onClick={() => setDiagnostic(!diagnostic)} className={`toggle ${diagnostic ? 'active' : ''}`} aria-label="Toggle diagnostic mode"><span /></button></div><div className="py-10"><div className="mb-3 text-xs text-accent">ARIF &gt; listening for the root question</div><p className="font-mono text-sm leading-7 text-white/80">{diagnostic ? 'What are you trying to make possible?' : 'Diagnostic mode paused.'}</p></div><div className="flex items-center gap-2 border-t border-white/10 pt-4 text-[10px] uppercase tracking-widest text-muted-foreground"><span className="pulse-dot" /> zero-cost search <span className="ml-auto text-accent">online</span></div></div></div></section>
+
+      <section id="ecosystem" className="mx-auto max-w-7xl px-5 py-24 md:px-10"><div className="mb-10 flex items-end justify-between gap-6"><div><p className="eyebrow">The portals</p><h2 className="mt-3 text-4xl font-black tracking-tight md:text-6xl">One stack.<br /><span className="text-gradient">Many doors.</span></h2></div><p className="hidden max-w-xs text-right text-sm leading-6 text-muted-foreground md:block">A living ecosystem of tools for thought, commerce, care, and community.</p></div><div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">{portals.map((portal, index) => { const Icon = portal.icon; return <motion.article whileHover={{ y: -5 }} key={portal.title} className={`portal p-6 ${portal.featured ? 'lg:col-span-2' : ''}`}><div className="mb-12 flex items-start justify-between"><div className="icon-box"><Icon className="size-5" /></div><span className="tag">{portal.tag}</span></div><h3 className="text-2xl font-bold">{portal.title}</h3><p className="mt-3 min-h-14 text-sm leading-6 text-muted-foreground">{portal.text}</p>{portal.href ? <a href={portal.href} className="mt-7 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-accent">{portal.title === 'Zabibu ARIF' ? 'Open ARIF Portal' : 'Explore Portal'} <ArrowUpRight className="size-4" /></a> : <span className="mt-7 inline-flex text-xs uppercase tracking-widest text-muted-foreground">In the works</span>}<span className="portal-number">0{index + 1}</span></motion.article> })}</div></section>
+
+      <section id="support" className="mx-auto max-w-7xl px-5 pb-24 md:px-10"><div className="grid gap-4 md:grid-cols-2"><div className="support-card p-8 md:p-10"><p className="eyebrow text-accent">Financial gateway</p><h2 className="mt-4 max-w-md text-4xl font-black tracking-tight">Back the Sovereign African Stack</h2><p className="mt-4 max-w-md leading-7 text-white/60">Your support keeps resilient, local-first software moving from Nairobi to everywhere.</p><a href={links.payd} className="mt-8 inline-flex items-center gap-2 bg-accent px-5 py-3 text-xs font-bold uppercase tracking-wider text-black">Support via Payd <ArrowUpRight className="size-4" /></a></div><div className="community-card p-8 md:p-10"><p className="eyebrow text-primary">Community hub</p><h2 className="mt-4 text-4xl font-black tracking-tight">The Zabibu Movement</h2><p className="mt-4 max-w-md leading-7 text-muted-foreground">Builders, dreamers, and curious minds shaping a softer digital future.</p><a href={links.whatsapp} className="mt-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-accent">Join WhatsApp Channel <ArrowUpRight className="size-4" /></a></div></div></section>
+
+      <section id="dispatches" className="border-y border-white/10 bg-white/[0.02] px-5 py-24 md:px-10"><div className="mx-auto max-w-7xl"><p className="eyebrow">The newsroom</p><div className="mt-3 flex flex-col justify-between gap-4 md:flex-row md:items-end"><h2 className="text-4xl font-black tracking-tight md:text-6xl">Dispatches from<br /><span className="text-gradient">Nairobi.</span></h2><p className="max-w-sm text-sm leading-6 text-muted-foreground">Live engineering essays, manifestos, and field reports.</p></div><div className="mt-12 grid gap-4 md:grid-cols-3">{posts.map((post) => <article key={post.title} className="post-card"><p className="text-xs uppercase tracking-widest text-accent">{post.date}</p><h3 className="mt-5 text-xl font-bold leading-tight">{post.title}</h3><p className="mt-4 text-sm leading-6 text-muted-foreground">{post.excerpt}</p><a href={post.link} className="mt-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest">Read on Medium <ExternalLink className="size-3" /></a></article>)}</div><div className="newsletter mt-12 flex flex-col gap-5 p-6 md:flex-row md:items-center md:justify-between"><div><p className="font-bold">Stay close to the signal.</p><p className="mt-1 text-sm text-muted-foreground">One thoughtful dispatch, occasionally.</p></div>{subscribed ? <div className="flex items-center gap-2 text-sm text-accent"><Check className="size-4" /> You&apos;re on the list.</div> : <form onSubmit={(e) => { e.preventDefault(); if (email) setSubscribed(true) }} className="flex w-full max-w-md gap-2"><input value={email} onChange={(e) => setEmail(e.target.value)} type="email" required placeholder="your@email.com" className="min-w-0 flex-1 bg-black/30 px-4 py-3 text-sm outline-none ring-1 ring-white/10 focus:ring-primary" aria-label="Email address" /><button className="glow-button shrink-0 px-4 py-3 text-xs font-bold uppercase tracking-wider" type="submit"><Send className="mr-2 inline size-3" /> Subscribe</button></form>}</div></div></section>
+
+      <section className="mx-auto max-w-7xl px-5 py-24 md:px-10"><div className="manifesto p-8 md:p-16"><p className="eyebrow text-accent">Founder manifesto</p><blockquote className="mt-8 max-w-5xl text-3xl font-semibold leading-tight tracking-tight md:text-5xl">“Software should guide hardware, not the other way around. Africans shouldn&apos;t be second-hand consumers of Silicon Valley&apos;s leftovers. We are building tech that is soft, local, playful, adaptable, and relentlessly ambitious.”</blockquote><p className="mt-8 text-sm font-bold uppercase tracking-widest text-muted-foreground">— Tehillah Mwangada Kachila</p></div></section>
+
+      <footer className="border-t border-white/10 px-5 py-12 md:px-10"><div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]"><div><a href="#top" className="flex items-center gap-3 font-black tracking-[0.18em]"><span className="grape-mark">Z</span><span className="text-sm">ZABIBU TECHNIKA</span></a><p className="mt-5 max-w-xs text-sm leading-6 text-muted-foreground">Born in Nairobi, engineered for humanity.</p></div><div><p className="footer-heading">Ecosystem</p><div className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground"><a href={links.arif}>Zabibu ARIF</a><a href="https://zabibu.lovable.app">ZabibuOS</a><a href="https://sigana.lovable.app">Sigana</a><a href="https://heyella.netlify.app">Ella Journal</a></div></div><div><p className="footer-heading">Connect</p><div className="mt-4 flex flex-col gap-3 text-sm text-muted-foreground"><a href="https://x.com/zabibutechnika">X / Twitter</a><a href="https://instagram.com/zabibutechnika">Instagram</a><a href="https://linkedin.com/c/zabibutechnika">LinkedIn</a><a href={links.whatsapp}>WhatsApp</a></div></div><div><p className="footer-heading">Give back</p><a href={links.payd} className="mt-4 inline-flex items-center gap-2 text-sm text-accent">Support via Payd <ArrowUpRight className="size-4" /></a></div></div><div className="mx-auto mt-12 max-w-7xl border-t border-white/10 pt-6 text-xs text-muted-foreground">© 2026 Zabibu Technika. All systems becoming.</div></footer>
     </main>
   )
 }
