@@ -174,7 +174,7 @@ export default function Home() {
         </section>
 
         {/* Manifesto Banner */}
-        <PortalFrame className="pb-32">
+        <PortalFrame className="pb-24">
           <div className="manifesto p-8 md:p-14 relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-purple-950/30 to-amber-950/30">
             <p className="eyebrow text-accent">Dispatch 001</p>
             <h2 className="mt-4 max-w-3xl text-4xl font-black md:text-6xl text-white">
@@ -185,6 +185,41 @@ export default function Home() {
             </Link>
           </div>
         </PortalFrame>
+
+        {/* Footer */}
+        <footer className="border-t border-white/10 bg-black/40 px-5 py-16 md:px-10 backdrop-blur-md">
+          <div className="mx-auto grid max-w-7xl gap-10 md:grid-cols-4">
+            <div className="md:col-span-2">
+              <span className="text-xl font-black tracking-tight text-white">ZABIBU TECHNIKA</span>
+              <p className="mt-4 max-w-sm text-sm text-muted-foreground leading-relaxed">
+                Building local-first computational infrastructure, cognitive models, and community spaces from Nairobi to the world.
+              </p>
+            </div>
+            <div>
+              <p className="eyebrow mb-4">Ecosystem</p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li><Link href="/arif" className="hover:text-white transition-colors">Zabibu Arif</Link></li>
+                <li><Link href="/zabibuos" className="hover:text-white transition-colors">ZabibuOS</Link></li>
+                <li><Link href="/sigana" className="hover:text-white transition-colors">Sigana</Link></li>
+                <li><Link href="/fikra" className="hover:text-white transition-colors">Fikra 2B</Link></li>
+                <li><Link href="/ella" className="hover:text-white transition-colors">Ella</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p className="eyebrow mb-4">Company</p>
+              <ul className="space-y-3 text-sm text-muted-foreground">
+                <li><Link href="/about" className="hover:text-white transition-colors">About Us</Link></li>
+                <li><Link href="/dispatches" className="hover:text-white transition-colors">Dispatches</Link></li>
+                <li><Link href="/manifesto" className="hover:text-white transition-colors">Manifesto</Link></li>
+                <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between border-t border-white/5 pt-8 md:flex-row text-xs text-muted-foreground">
+            <p>&copy; {new Date().getFullYear()} Zabibu Technika. All rights reserved.</p>
+            <p className="mt-4 md:mt-0 font-mono text-[11px] text-accent/80">Designed from Nairobi.</p>
+          </div>
+        </footer>
       </main>
     </PortalShell>
   )
