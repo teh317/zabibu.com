@@ -30,14 +30,7 @@ const cards = [
     label: 'OPEN WEIGHTS',
     text: 'Small, sharp, open reasoning weights for the next generation of makers.',
     href: '/fikra',
-    image: null,
-  },
-  {
-    title: 'Bizkit',
-    label: 'COMMERCE',
-    text: 'Offline-first business tools for the people keeping economies moving.',
-    href: '/bizkit',
-    image: '/images/ustadi.png',
+    image: '/images/fikra.png',
   },
   {
     title: 'Ella',
