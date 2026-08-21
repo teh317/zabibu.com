@@ -45,13 +45,14 @@ const cards = [
 export default function Home() {
   return (
     <PortalShell>
-      <main id="top">
-        {/* Hero Section with Dynamic Ambient Slideshow */}
+      {/* Global Ambient Slideshow Background spanning the entire page */}
+      <AmbientSlideshow />
+
+      <main id="top" className="relative z-10">
+        {/* Hero Section */}
         <section className="hero-grid relative overflow-hidden px-5 py-28 md:px-10 md:py-36">
-          <AmbientSlideshow />
-          
-          <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr] relative z-10">
-            <div>
+          <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
+            <div className="relative z-10">
               <p className="eyebrow mb-7 inline-flex border border-primary/40 bg-primary/10 px-3 py-2 rounded-full">
                 Nairobi street art × Silicon Valley systems
               </p>
