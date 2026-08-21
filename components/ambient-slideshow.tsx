@@ -33,7 +33,7 @@ export function AmbientSlideshow() {
         <div
           key={src}
           className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-            index === currentIndex ? 'opacity-55 scale-105' : 'opacity-0 scale-100'
+            index === currentIndex ? 'opacity-65 scale-105' : 'opacity-0 scale-100'
           }`}
           style={{ transition: 'opacity 2s ease-in-out, transform 7s ease-out' }}
         >
