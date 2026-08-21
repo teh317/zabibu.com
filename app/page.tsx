@@ -2,6 +2,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, BrainCircuit, Cpu, HeartPulse, Radio } from 'lucide-react'
 import { PortalCard, PortalFrame, PortalShell, SectionHeading } from '@/components/portal-shell'
+import { AmbientSlideshow } from '@/components/ambient-slideshow'
 
 const cards = [
   {
@@ -45,11 +46,13 @@ export default function Home() {
   return (
     <PortalShell>
       <main id="top">
-        {/* Hero Section */}
+        {/* Hero Section with Dynamic Ambient Slideshow */}
         <section className="hero-grid relative overflow-hidden px-5 py-28 md:px-10 md:py-36">
-          <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
-            <div className="relative z-10">
-              <p className="eyebrow mb-7 inline-flex border border-primary/40 bg-primary/10 px-3 py-2">
+          <AmbientSlideshow />
+          
+          <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr] relative z-10">
+            <div>
+              <p className="eyebrow mb-7 inline-flex border border-primary/40 bg-primary/10 px-3 py-2 rounded-full">
                 Nairobi street art × Silicon Valley systems
               </p>
               <h1 className="text-balance text-6xl font-black leading-[.9] tracking-[-.08em] md:text-9xl">
@@ -69,7 +72,7 @@ export default function Home() {
             </div>
 
             {/* Hero Visual Artifact featuring ARIF preview */}
-            <div className="bento-art relative min-h-[370px] border border-primary/40 bg-card p-5 shadow-[0_30px_100px_rgba(124,58,237,.22)] overflow-hidden rounded-2xl">
+            <div className="bento-art relative min-h-[370px] border border-primary/40 bg-card/80 backdrop-blur-xl p-5 shadow-[0_30px_100px_rgba(124,58,237,.22)] overflow-hidden rounded-3xl">
               <div className="absolute inset-0 opacity-40">
                 <Image 
                   src="/images/arif.png" 
@@ -79,17 +82,17 @@ export default function Home() {
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#030305] via-[#030305]/80 to-transparent" />
-              <div className="absolute inset-5 border border-cyan-300/30 p-4 flex flex-col justify-between z-10">
+              <div className="absolute inset-5 border border-cyan-300/30 p-4 flex flex-col justify-between z-10 rounded-2xl">
                 <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-cyan-200">
                   <span>ZABIBU / HUB_01</span>
                   <span className="pulse-dot" />
                 </div>
                 <div>
                   <div className="grid grid-cols-2 gap-3 mb-4">
-                    <div className="mini-tile bg-primary/35 flex items-center gap-2 p-2 rounded"><BrainCircuit size={16}/><span>ARIF</span></div>
-                    <div className="mini-tile bg-cyan-400/20 flex items-center gap-2 p-2 rounded"><Cpu size={16}/><span>OS</span></div>
-                    <div className="mini-tile bg-accent/30 flex items-center gap-2 p-2 rounded"><HeartPulse size={16}/><span>ELLA</span></div>
-                    <div className="mini-tile bg-fuchsia-500/25 flex items-center gap-2 p-2 rounded"><Radio size={16}/><span>SIGANA</span></div>
+                    <div className="mini-tile bg-primary/35 flex items-center gap-2 p-2 rounded-xl"><BrainCircuit size={16}/><span>ARIF</span></div>
+                    <div className="mini-tile bg-cyan-400/20 flex items-center gap-2 p-2 rounded-xl"><Cpu size={16}/><span>OS</span></div>
+                    <div className="mini-tile bg-accent/30 flex items-center gap-2 p-2 rounded-xl"><HeartPulse size={16}/><span>ELLA</span></div>
+                    <div className="mini-tile bg-fuchsia-500/25 flex items-center gap-2 p-2 rounded-xl"><Radio size={16}/><span>SIGANA</span></div>
                   </div>
                   <p className="font-mono text-xs leading-5 text-white/80">
                     // built for the edge<br />// designed from Nairobi<br />// open to the world
@@ -128,7 +131,7 @@ export default function Home() {
                   </div>
 
                   {card.image && (
-                    <div className="mb-5 rounded-xl overflow-hidden border border-white/10 bg-black/60 aspect-video relative">
+                    <div className="mb-5 rounded-2xl overflow-hidden border border-white/10 bg-black/60 aspect-video relative">
                       <Image 
                         src={card.image} 
                         alt={card.title}
@@ -176,7 +179,7 @@ export default function Home() {
             <h2 className="mt-4 max-w-3xl text-4xl font-black md:text-6xl text-white">
               The future should feel like a place you recognize.
             </h2>
-            <Link href="/dispatches" className="mt-8 inline-flex items-center gap-2 bg-accent px-5 py-3 text-xs font-bold uppercase tracking-wider text-black font-bold rounded-xl">
+            <Link href="/dispatches" className="mt-8 inline-flex items-center gap-2 bg-accent px-5 py-3 text-xs font-bold uppercase tracking-wider text-black font-bold rounded-2xl">
               Read dispatches <ArrowUpRight className="size-4" />
             </Link>
           </div>
