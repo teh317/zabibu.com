@@ -22,7 +22,7 @@ export function AmbientSlideshow() {
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 7000); // Changes image smoothly every 7 seconds
+    }, 10000); // Changes image smoothly every 7 seconds
 
     return () => clearInterval(interval);
   }, []);
@@ -33,7 +33,7 @@ export function AmbientSlideshow() {
         <div
           key={src}
           className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-            index === currentIndex ? 'opacity-25 scale-105' : 'opacity-0 scale-100'
+            index === currentIndex ? 'opacity-65 scale-105' : 'opacity-0 scale-100'
           }`}
           style={{ transition: 'opacity 1.5s ease-in-out, transform 7s ease-out' }}
         >
