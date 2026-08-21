@@ -5,7 +5,7 @@ import { PortalCard, PortalFrame, PortalShell, SectionHeading } from '@/componen
 
 const cards = [
   {
-    title: 'Zabibu ARIF',
+    title: 'Zabibu Arif',
     label: 'FLAGSHIP / COGNITION',
     text: 'A Socratic cognitive engine for the questions underneath the question.',
     href: '/arif',
