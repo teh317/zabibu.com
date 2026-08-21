@@ -54,7 +54,7 @@ export default function Home() {
           <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
             <div className="relative z-10">
               <p className="eyebrow mb-7 inline-flex border border-primary/40 bg-primary/10 px-3 py-2 rounded-full">
-                Nairobi street art × Silicon Valley systems
+                Tech should feel like home.
               </p>
               <h1 className="text-balance text-6xl font-black leading-[.9] tracking-[-.08em] md:text-9xl">
                 Software<br />that <span className="text-gradient">breathes.</span>
