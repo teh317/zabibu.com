@@ -1,0 +1,3 @@
+import { NextResponse } from 'next/server'
+import { absoluteUrl, projects, validProjectId } from '@/lib/discoverability'
+export async function GET(_request: Request, { params }: { params: Promise<{ id: string }> }) { const { id } = await params; if (!validProjectId(id) || !(id in projects)) return NextResponse.json({ error: 'Project not found' }, { status: 404 }); const project = projects[id as keyof typeof projects]; return new NextResponse(`# ${project.name}\n\n${project.description}\n\nOfficial page: ${absoluteUrl(project.url)}\n\n<!-- Source: Zabibu Technika public product page. -->`, { headers: { 'content-type': 'text/plain; charset=utf-8' } }) }

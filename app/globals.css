@@ -59,3 +59,5 @@ a:hover { opacity: .82; }
 .equalizer { display: flex; height: 230px; align-items: center; gap: 8px; border-block: 1px solid rgba(0,213,191,.25); padding: 20px 0; }.equalizer span { flex: 1; background: linear-gradient(#00d5bf,#8b2cff); animation: pulse 1.3s ease-in-out infinite alternate; }.equalizer span:nth-child(3n) { animation-delay: .3s; }.equalizer span:nth-child(4n) { animation-delay: .6s; } @keyframes pulse { from { transform: scaleY(.55); opacity: .6; } to { transform: scaleY(1); opacity: 1; } }
 .post-card { border-top: 1px solid rgba(255,255,255,.16); padding: 24px 4px 10px; }.post-card:hover { border-color: #ffbf3f; }
 @media (max-width: 640px) { .hero-grid { background-size: 42px 42px; } .graffiti-scribble { font-size: 120px; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+@media (max-width: 640px), (prefers-reduced-data: reduce) { .noise { display: none; } .portal { backdrop-filter: none; } }
