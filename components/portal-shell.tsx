@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
@@ -16,5 +17,5 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
 }
 function FooterColumn({ title, links }: { title: string; links: { href: string; label: string }[] }) { return <div><p className="eyebrow">{title}</p><div className="mt-5 flex flex-col gap-3 text-sm text-muted-foreground">{links.map(link => <Link key={link.href} href={link.href}>{link.label}</Link>)}</div></div> }
 export function SectionHeading({ eyebrow, title, copy }: { eyebrow: string; title: React.ReactNode; copy?: string }) { return <div className="mb-10 max-w-3xl"><p className="eyebrow">{eyebrow}</p><h1 className="mt-3 text-balance text-5xl font-black tracking-[-.06em] md:text-7xl">{title}</h1>{copy && <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">{copy}</p>}</div> }
-export function PortalCard({ title, label, text, href, className = '' }: { title: string; label: string; text: string; href: string; className?: string }) { return <Link href={href} className={`portal group block p-6 ${className}`}><div className="mb-12 flex items-start justify-between"><span className="tag">{label}</span><span className="text-2xl text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span></div><h2 className="text-2xl font-bold">{title}</h2><p className="mt-3 max-w-sm text-sm leading-6 text-muted-foreground">{text}</p><span className="mt-8 inline-block text-[10px] font-bold uppercase tracking-[.2em] text-accent">Open portal</span></Link> }
+export function PortalCard({ title, label, text, href, image, className = '' }: { title: string; label: string; text: string; href: string; image?: string; className?: string }) { return <Link href={href} className={`portal group block overflow-hidden p-6 ${className}`}><div className="mb-7 flex items-start justify-between"><span className="tag">{label}</span><span className="text-2xl text-primary transition-transform group-hover:translate-x-1 group-hover:-translate-y-1">↗</span></div>{image && <div className="relative mb-6 aspect-video overflow-hidden rounded-2xl border border-white/10 bg-black/60"><Image src={image} alt={`${title} product interface`} fill className="object-cover transition-transform duration-500 group-hover:scale-105" /></div>}<h2 className="text-2xl font-bold">{title}</h2><p className="mt-3 max-w-sm text-sm leading-6 text-muted-foreground">{text}</p><span className="mt-8 inline-block text-[10px] font-bold uppercase tracking-[.2em] text-accent">Open portal</span></Link> }
 export function PortalFrame({ children, className = '' }: { children: React.ReactNode; className?: string }) { return <main className={`mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28 ${className}`}>{children}</main> }
