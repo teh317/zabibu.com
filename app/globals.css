@@ -51,7 +51,7 @@ a:hover { opacity: .82; }
 .manifesto { border: 1px solid rgba(255,191,63,.35); background: linear-gradient(130deg,#21150b,#111015 60%,#19112b); }
 .diagnostic-panel, .terminal { border: 1px solid rgba(0,213,191,.38); background: rgba(3,8,18,.75); padding: 22px; box-shadow: inset 0 0 55px rgba(0,213,191,.06); border-radius: 1rem; }
 .toggle { width: 34px; height: 18px; padding: 2px; border-radius: 99px; background: #27272a; }.toggle span { display: block; width: 14px; height: 14px; border-radius: 50%; background: #71717a; transition: transform .2s; }.toggle.active { background: #087d72; }.toggle.active span { transform: translateX(16px); background: #00d5bf; box-shadow: 0 0 8px #00d5bf; }
-.bento-art { border-radius: 1.5rem; background: linear-gradient(145deg,#17101f,#08191c); }
+.bento-art { display: none; }
 .bento-art::before { content: ''; position: absolute; inset: 0; background: linear-gradient(125deg,transparent 45%,rgba(255,191,63,.18) 45.2%,transparent 46%), repeating-linear-gradient(90deg,transparent 0 40px,rgba(255,255,255,.05) 41px 42px); }
 .graffiti-scribble { position: absolute; right: 25px; bottom: -25px; color: rgba(255,191,63,.8); font-size: 190px; font-weight: 900; font-style: italic; transform: rotate(-14deg); text-shadow: 5px 5px 0 rgba(139,44,255,.6); }
 .mini-tile { display: flex; min-height: 105px; flex-direction: column; justify-content: space-between; padding: 14px; font-size: 10px; font-weight: 800; letter-spacing: .15em; }
