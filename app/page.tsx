@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, BrainCircuit, Cpu, HeartPulse, Radio } from 'lucide-react'
-import { PortalCard, PortalFrame, PortalShell, SectionHeading } from '@/components/portal-shell'
+import { PortalCard, PortalFrame, SectionHeading } from '@/components/portal-shell'
 import { AmbientSlideshow } from '@/components/ambient-slideshow'
 
 const cards = [
@@ -44,7 +44,7 @@ const cards = [
 
 export default function Home() {
   return (
-    <PortalShell>
+    <>
       {/* Global Ambient Slideshow Background spanning the entire page */}
       <AmbientSlideshow />
 
@@ -221,6 +221,6 @@ export default function Home() {
           </div>
         </footer>
       </main>
-    </PortalShell>
+    </>
   )
 }

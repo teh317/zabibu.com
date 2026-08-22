@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { PortalFrame, PortalShell, SectionHeading } from '@/components/portal-shell';
+import { PortalFrame, SectionHeading } from '@/components/portal-shell';
 
 interface Comment {
   author: string;
@@ -68,7 +68,7 @@ export default function Community() {
   };
 
   return (
-    <PortalShell>
+
       <PortalFrame>
         <SectionHeading
           eyebrow="Community & Sovereign Forum"
@@ -230,6 +230,6 @@ export default function Community() {
           </div>
         </div>
       </PortalFrame>
-    </PortalShell>
+  
   );
 }

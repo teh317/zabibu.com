@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { PortalFrame, PortalShell, SectionHeading } from '@/components/portal-shell';
+import { PortalFrame, SectionHeading } from '@/components/portal-shell';
 
 interface PostItem {
   title: string;
@@ -53,7 +53,7 @@ export default function Dispatches() {
   };
 
   return (
-    <PortalShell>
+
       <PortalFrame>
         <SectionHeading
           eyebrow="Dispatches / field notes"
@@ -88,6 +88,6 @@ export default function Dispatches() {
           ))}
         </div>
       </PortalFrame>
-    </PortalShell>
+  
   );
 }
