@@ -1,4 +1,4 @@
-import { PortalFrame, PortalShell, SectionHeading } from '@/components/portal-shell';
+import { PortalFrame, SectionHeading } from '@/components/portal-shell';
 
 const timeline = [
   {
@@ -87,7 +87,7 @@ const researchThemes = [
 
 export default function About() {
   return (
-    <PortalShell>
+
       <PortalFrame>
         {/* Header */}
         <SectionHeading
@@ -212,6 +212,6 @@ export default function About() {
           </div>
         </div>
       </PortalFrame>
-    </PortalShell>
+  
   );
 }

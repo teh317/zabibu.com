@@ -1,14 +1,14 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, BrainCircuit, Cpu, HeartPulse, Radio } from 'lucide-react'
-import { PortalCard, PortalFrame, PortalShell, SectionHeading } from '@/components/portal-shell'
+import { PortalCard, PortalFrame, SectionHeading } from '@/components/portal-shell'
 import { AmbientSlideshow } from '@/components/ambient-slideshow'
 
 const cards = [
   {
     title: 'Zabibu Arif',
     label: 'FLAGSHIP / COGNITION',
-    text: 'A Socratic cognitive engine for the questions underneath the question.',
+    text: 'Zabibu Arif is an intelligent companion powered by Fikra Engine, combining advanced conversational intelligence with thoughtful, human-centered interactions.',
     href: '/arif',
     image: '/images/arif.png',
   },
@@ -22,7 +22,7 @@ const cards = [
   {
     title: 'Sigana',
     label: 'MEDIA / COMMUNITY',
-    text: 'A community-first media space for stories, sound, and shared signal.',
+    text: 'Premium TV and streaming service. 100% free! No subs, no login, just some of your favorite shows and channels from across the world!',
     href: '/sigana',
     image: '/images/sigana.png',
   },
@@ -36,7 +36,7 @@ const cards = [
   {
     title: 'Ella',
     label: 'CARE / PRIVACY',
-    text: 'An encrypted companion for tending to your inner world.',
+    text: 'Ella is a journaling app designed to guide users through thoughtful reflections on their daily experiences, emotions, and moods.',
     href: '/ella',
     image: '/images/ella.png',
   },
@@ -44,7 +44,7 @@ const cards = [
 
 export default function Home() {
   return (
-    <PortalShell>
+    <>
       {/* Global Ambient Slideshow Background spanning the entire page */}
       <AmbientSlideshow />
 
@@ -221,6 +221,6 @@ export default function Home() {
           </div>
         </footer>
       </main>
-    </PortalShell>
+    </>
   )
 }

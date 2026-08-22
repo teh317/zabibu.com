@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { PortalFrame, PortalShell, SectionHeading } from '@/components/portal-shell';
+import { PortalFrame, SectionHeading } from '@/components/portal-shell';
 
 const tiers = [
   {
@@ -91,7 +91,7 @@ export default function Investors() {
   };
 
   return (
-    <PortalShell>
+
       <PortalFrame>
         <SectionHeading
           eyebrow="Capital & Sovereign Infrastructure"
@@ -255,6 +255,6 @@ export default function Investors() {
           )}
         </div>
       </PortalFrame>
-    </PortalShell>
+
   );
 }

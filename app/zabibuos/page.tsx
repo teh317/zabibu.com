@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { PortalFrame, PortalShell, SectionHeading } from '@/components/portal-shell';
+import { PortalFrame, SectionHeading } from '@/components/portal-shell';
 
 const elementalThemes = [
   { name: 'Hewani', label: 'Air / Sky', accent: '#06B6D4', bg: 'from-cyan-950/40 to-black' },
@@ -32,7 +32,7 @@ export default function ZabibuOS() {
   const [activeTheme, setActiveTheme] = useState(elementalThemes[0]);
 
   return (
-    <PortalShell>
+
       <PortalFrame>
         <SectionHeading
           eyebrow="ZabibuOS / Elemental Computing"
@@ -140,6 +140,6 @@ export default function ZabibuOS() {
           ))}
         </div>
       </PortalFrame>
-    </PortalShell>
+  
   );
 }
