@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight } from 'lucide-react'
+import { ArrowUpRight, BrainCircuit, Cpu, HeartPulse, Radio } from 'lucide-react'
 import { PortalCard, PortalFrame, SectionHeading } from '@/components/portal-shell'
 import { AmbientSlideshow } from '@/components/ambient-slideshow'
 
