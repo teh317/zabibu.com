@@ -60,7 +60,7 @@ export default function Home() {
                 Software<br />that <span className="text-gradient">breathes.</span>
               </h1>
               <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl">
-                Zabibu Technika is a Nairobi-rooted technology company building sovereign, local-first systems for thought, commerce, care, and community.
+                Zabibu Technika is an African technology company engineering sovereign, local-first software and hardware solutions for overlooked markets.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link href="/about" className="glow-button px-6 py-4 text-xs font-bold uppercase tracking-wider">
@@ -82,7 +82,6 @@ export default function Home() {
                   className="object-cover"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#030305] via-[#030305]/80 to-transparent" />
               <div className="absolute inset-5 border border-cyan-300/30 p-4 flex flex-col justify-between z-10 rounded-2xl">
                 <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-cyan-200">
                   <span>ZABIBU / HUB_01</span>
