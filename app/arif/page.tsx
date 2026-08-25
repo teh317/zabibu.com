@@ -12,7 +12,7 @@ const features = [
 
 export default function Arif() {
   return (
-    <PortalFrame>
+    <PortalFrame backgroundImage="/images/arif.png">
       <main className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
           <div>
