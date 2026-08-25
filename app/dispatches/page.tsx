@@ -35,15 +35,30 @@ export default function Dispatches() {
   const [posts, setPosts] = useState<PostItem[]>(fallbackPosts);
 
   useEffect(() => {
-    fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@zabibutechnika')
+    // Cache buster parameter forcing fresh fetch from RSS endpoint
+    const timestamp = new Date().getTime();
+    const rssFeedUrl = encodeURIComponent(`https://medium.com/feed/@zabibutechnika?t=${timestamp}`);
+
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssFeedUrl}&_t=${timestamp}`)
       .then((res) => res.json())
       .then((data) => {
         if (data.items && data.items.length > 0) {
-          setPosts(data.items.slice(0, 3));
+          // 1. Sort posts by pubDate descending (most recent first)
+          const sorted = data.items.sort(
+            (a: PostItem, b: PostItem) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
+          );
+
+          // 2. If fewer than 3 live posts exist, pad with non-duplicate fallbacks
+          let combined = [...sorted];
+          if (combined.length < 3) {
+            combined = [...combined, ...fallbackPosts.slice(combined.length)];
+          }
+
+          setPosts(combined.slice(0, 3));
         }
       })
       .catch(() => {
-        // Keeps fallback posts active if fetch fails
+        // Keeps fallback posts active if network/fetch fails
       });
   }, []);
 
@@ -52,42 +67,49 @@ export default function Dispatches() {
     return htmlString.replace(/<[^>]*>?/gm, '').slice(0, 130) + '...';
   };
 
-  return (
+  const formatDate = (dateStr?: string) => {
+    if (!dateStr) return '2026';
+    const date = new Date(dateStr);
+    if (isNaN(date.getTime())) return dateStr; // Return raw string if already formatted
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${month} / ${year}`;
+  };
 
-      <PortalFrame>
-        <SectionHeading
-          eyebrow="Dispatches / field notes"
-          title={
-            <>
-              Reports from
-              <br />
-              <span className="text-gradient">the edge.</span>
-            </>
-          }
-          copy="Engineering essays, manifestos, and field reports from Nairobi and the low-spec frontier."
-        />
-        <div className="grid gap-4 md:grid-cols-3">
-          {posts.map((post, i) => (
-            <article className="post-card" key={post.link || i}>
-              <p className="text-xs uppercase tracking-widest text-accent">
-                {post.pubDate ? post.pubDate.split(' ')[0] : `0${i + 1} / 2026`}
-              </p>
-              <h2 className="mt-6 text-2xl font-bold line-clamp-2">{post.title}</h2>
-              <p className="mt-4 text-sm leading-6 text-muted-foreground line-clamp-3">
-                {cleanSnippet(post.description)}
-              </p>
-              <a
-                className="mt-8 inline-block text-xs font-bold uppercase tracking-widest text-accent hover:underline"
-                href={post.link || 'https://medium.com/@zabibutechnika'}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read on Medium ↗
-              </a>
-            </article>
-          ))}
-        </div>
-      </PortalFrame>
-  
+  return (
+    <PortalFrame>
+      <SectionHeading
+        eyebrow="Dispatches / field notes"
+        title={
+          <>
+            Reports from
+            <br />
+            <span className="text-gradient">the edge.</span>
+          </>
+        }
+        copy="Engineering essays, manifestos, and field reports from Nairobi and the low-spec frontier."
+      />
+      <div className="grid gap-4 md:grid-cols-3">
+        {posts.map((post, i) => (
+          <article className="post-card" key={post.link || i}>
+            <p className="text-xs uppercase tracking-widest text-accent">
+              {formatDate(post.pubDate)}
+            </p>
+            <h2 className="mt-6 text-2xl font-bold line-clamp-2">{post.title}</h2>
+            <p className="mt-4 text-sm leading-6 text-muted-foreground line-clamp-3">
+              {cleanSnippet(post.description)}
+            </p>
+            <a
+              className="mt-8 inline-block text-xs font-bold uppercase tracking-widest text-accent hover:underline"
+              href={post.link || 'https://medium.com/@zabibutechnika'}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read on Medium ↗
+            </a>
+          </article>
+        ))}
+      </div>
+    </PortalFrame>
   );
 }
