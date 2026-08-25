@@ -52,7 +52,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="hero-grid relative overflow-hidden px-5 py-28 md:px-10 md:py-36">
           <div className="mx-auto grid max-w-7xl items-center gap-16 text-center lg:grid-cols-[1.05fr_.95fr]">
-            <div className="relative z-10">
+            <div className="relative z-10 flex flex-col items-center text-center">
               <h1 className="text-balance text-center text-6xl font-black leading-[.9] tracking-[-.08em] md:text-9xl">
                 Tech should feel like&nbsp;&nbsp;home.
               </h1>
