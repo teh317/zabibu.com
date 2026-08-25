@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight, BrainCircuit, Cpu, HeartPulse, Radio } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
 import { PortalCard, PortalFrame, SectionHeading } from '@/components/portal-shell'
 import { AmbientSlideshow } from '@/components/ambient-slideshow'
 
@@ -53,7 +53,7 @@ export default function Home() {
         <section className="hero-grid relative overflow-hidden px-5 py-28 md:px-10 md:py-36">
           <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
             <div className="relative z-10">
-              <h1 className="text-balance text-6xl font-black leading-[.9] tracking-[-.08em] md:text-9xl">
+              <h1 className="text-balance text-justify text-6xl font-black leading-[.9] tracking-[-.08em] md:text-9xl">
                 Tech should feel like&nbsp;&nbsp;home.
               </h1>
               <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl">
@@ -69,35 +69,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Visual Artifact featuring ARIF preview */}
-            <div className="bento-art relative min-h-[370px] border border-primary/40 bg-card/80 backdrop-blur-xl p-5 shadow-[0_30px_100px_rgba(124,58,237,.22)] overflow-hidden rounded-3xl">
-              <div className="absolute inset-0 flex items-center justify-center p-12">
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zabibu-Logo-White%20Wording-dyObOw9Pzq4ZB1XWi5jiu33AQOOzpg.png"
-                  alt="Zabibu Technika"
-                  width={800}
-                  height={322}
-                  className="h-auto w-full max-w-sm object-contain"
-                />
-              </div>
-              <div className="absolute inset-5 border border-cyan-300/30 p-4 flex flex-col justify-between z-10 rounded-2xl">
-                <div className="flex items-center justify-between text-[10px] uppercase tracking-widest text-cyan-200">
-                  <span>ZABIBU / HUB_01</span>
-                  <span className="pulse-dot" />
-                </div>
-                <div>
-                  <div className="grid grid-cols-2 gap-3 mb-4">
-                    <div className="mini-tile bg-primary/35 flex items-center gap-2 p-2 rounded-xl"><BrainCircuit size={16}/><span>ARIF</span></div>
-                    <div className="mini-tile bg-cyan-400/20 flex items-center gap-2 p-2 rounded-xl"><Cpu size={16}/><span>OS</span></div>
-                    <div className="mini-tile bg-accent/30 flex items-center gap-2 p-2 rounded-xl"><HeartPulse size={16}/><span>ELLA</span></div>
-                    <div className="mini-tile bg-fuchsia-500/25 flex items-center gap-2 p-2 rounded-xl"><Radio size={16}/><span>SIGANA</span></div>
-                  </div>
-                  <p className="font-mono text-xs leading-5 text-white/80">
-                    // built for the edge<br />// designed from Nairobi<br />// open to the world
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </section>
 
