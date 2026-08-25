@@ -53,11 +53,8 @@ export default function Home() {
         <section className="hero-grid relative overflow-hidden px-5 py-28 md:px-10 md:py-36">
           <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
             <div className="relative z-10">
-              <p className="eyebrow mb-7 inline-flex border border-primary/40 bg-primary/10 px-3 py-2 rounded-full">
-                Tech should feel like home.
-              </p>
               <h1 className="text-balance text-6xl font-black leading-[.9] tracking-[-.08em] md:text-9xl">
-                Software<br />that <span className="text-gradient">breathes.</span>
+                Tech should feel like&nbsp;&nbsp;home.
               </h1>
               <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl">
                 Zabibu Technika is an African technology company engineering sovereign, local-first software and hardware solutions for overlooked markets.
@@ -74,12 +71,13 @@ export default function Home() {
 
             {/* Hero Visual Artifact featuring ARIF preview */}
             <div className="bento-art relative min-h-[370px] border border-primary/40 bg-card/80 backdrop-blur-xl p-5 shadow-[0_30px_100px_rgba(124,58,237,.22)] overflow-hidden rounded-3xl">
-              <div className="absolute inset-0 opacity-40">
-                <Image 
-                  src="/images/arif.png" 
-                  alt="Zabibu ARIF Preview" 
-                  fill 
-                  className="object-cover"
+              <div className="absolute inset-0 flex items-center justify-center p-12">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zabibu-Logo-White%20Wording-dyObOw9Pzq4ZB1XWi5jiu33AQOOzpg.png"
+                  alt="Zabibu Technika"
+                  width={800}
+                  height={322}
+                  className="h-auto w-full max-w-sm object-contain"
                 />
               </div>
               <div className="absolute inset-5 border border-cyan-300/30 p-4 flex flex-col justify-between z-10 rounded-2xl">
