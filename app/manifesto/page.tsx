@@ -36,7 +36,7 @@ export default function Manifesto() {
         {/* Header / Hero */}
         <div className="max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/20 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-amber-400">
-            <Sparkles className="size-4" /> Zabibu Technica / Philosophy
+            <Sparkles className="size-4" /> Zabibu Technika / Philosophy
           </div>
           <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
             The Sovereign Computing Manifesto
@@ -75,13 +75,13 @@ export default function Manifesto() {
           </div>
         </section>
 
-        {/* Zabibu Technica Certified Team Section */}
+        {/* Zabibu Technika Certified Team Section */}
         <section className="mt-16 rounded-2xl border border-amber-500/30 bg-amber-950/30 p-8 md:p-10">
           <div className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-400 mb-2">
             <Users className="size-4" /> 02 / The Movement
           </div>
           <h2 className="text-2xl font-bold text-white md:text-3xl">
-            Zabibu Technica Certified Team
+            Zabibu Technika Certified Team
           </h2>
           <p className="mt-3 max-w-2xl text-sm leading-7 text-white/70">
             The Certified Team is an alliance of developers, researchers, and creators dedicated to forging a sovereign digital future for Africa. Members contribute code, optimize quantized models, deploy low-bandwidth nodes, and build local privacy tools.
