@@ -32,34 +32,25 @@ const fallbackPosts: PostItem[] = [
 ];
 
 export default function Dispatches() {
-  const [posts, setPosts] = useState<PostItem[]>(fallbackPosts);
+  const [posts, setPosts] = useState<PostItem[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Cache buster parameter forcing fresh fetch from RSS endpoint
-    const timestamp = new Date().getTime();
-    const rssFeedUrl = encodeURIComponent(`https://medium.com/feed/@zabibutechnika?t=${timestamp}`);
-
-    fetch(`https://api.rss2json.com/v1/api.json?rss_url=${rssFeedUrl}&_t=${timestamp}`)
+    fetch('/api/dispatches')
       .then((res) => res.json())
       .then((data) => {
         if (data.items && data.items.length > 0) {
-          // 1. Sort posts by pubDate descending (most recent first)
-          const sorted = data.items.sort(
-            (a: PostItem, b: PostItem) => new Date(b.pubDate).getTime() - new Date(a.pubDate).getTime()
-          );
-
-          // 2. If fewer than 3 live posts exist, pad with non-duplicate fallbacks
-          let combined = [...sorted];
-          if (combined.length < 3) {
-            combined = [...combined, ...fallbackPosts.slice(combined.length)];
-          }
-
-          setPosts(combined.slice(0, 3));
+          // If we have live posts, use ONLY live posts!
+          setPosts(data.items);
+        } else {
+          // Fallback only if Medium is completely unreachable
+          setPosts(fallbackPosts);
         }
       })
       .catch(() => {
-        // Keeps fallback posts active if network/fetch fails
-      });
+        setPosts(fallbackPosts);
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   const cleanSnippet = (htmlString?: string) => {
@@ -70,7 +61,7 @@ export default function Dispatches() {
   const formatDate = (dateStr?: string) => {
     if (!dateStr) return '2026';
     const date = new Date(dateStr);
-    if (isNaN(date.getTime())) return dateStr; // Return raw string if already formatted
+    if (isNaN(date.getTime())) return dateStr;
     const month = String(date.getMonth() + 1).padStart(2, '0');
     const year = date.getFullYear();
     return `${month} / ${year}`;
@@ -90,7 +81,7 @@ export default function Dispatches() {
         copy="Engineering essays, manifestos, and field reports from Nairobi and the low-spec frontier."
       />
       <div className="grid gap-4 md:grid-cols-3">
-        {posts.map((post, i) => (
+        {(loading ? fallbackPosts : posts).map((post, i) => (
           <article className="post-card" key={post.link || i}>
             <p className="text-xs uppercase tracking-widest text-accent">
               {formatDate(post.pubDate)}
