@@ -72,5 +72,8 @@ zabibu-u5/
 ├── components/                # Reusable UI Shells & Glassmorphic Cards
 └── public/
     └── images/                # Product screenshots and branding assets
+
+```
+
 📜 License & Sovereign Rights
 Developed with pride in Nairobi by Tehillah Mwangada Kachila & Zabibu Technika. All rights reserved. Open-weights and public tools are distributed under their respective permissive open-source licenses.
