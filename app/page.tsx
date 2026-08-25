@@ -51,15 +51,15 @@ export default function Home() {
       <main id="top" className="relative z-10">
         {/* Hero Section */}
         <section className="hero-grid relative overflow-hidden px-5 py-28 md:px-10 md:py-36">
-          <div className="mx-auto grid max-w-7xl items-center gap-16 lg:grid-cols-[1.05fr_.95fr]">
+          <div className="mx-auto grid max-w-7xl items-center gap-16 text-center lg:grid-cols-[1.05fr_.95fr]">
             <div className="relative z-10">
-              <h1 className="text-balance text-justify text-6xl font-black leading-[.9] tracking-[-.08em] md:text-9xl">
+              <h1 className="text-balance text-center text-6xl font-black leading-[.9] tracking-[-.08em] md:text-9xl">
                 Tech should feel like&nbsp;&nbsp;home.
               </h1>
-              <p className="mt-8 max-w-xl text-lg leading-8 text-muted-foreground md:text-xl">
+              <p className="mt-8 max-w-xl text-center text-lg leading-8 text-muted-foreground md:text-xl">
                 Zabibu Technika is an African technology company engineering sovereign, local-first software and hardware solutions for overlooked markets.
               </p>
-              <div className="mt-10 flex flex-wrap gap-4">
+              <div className="mt-11 flex flex-wrap justify-evenly gap-4">
                 <Link href="/about" className="glow-button px-6 py-4 text-xs font-bold uppercase tracking-wider">
                   What is Zabibu? <ArrowUpRight className="ml-2 size-4" />
                 </Link>
