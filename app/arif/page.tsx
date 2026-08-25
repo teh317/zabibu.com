@@ -1,14 +1,14 @@
 'use client'
 
-import { useState } from 'react'
 import Image from 'next/image'
-import { ArrowDown, ArrowUpRight, BrainCircuit, Sparkles, WifiOff, MessageSquareText, Filter, CheckCircle2, HelpCircle } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, BrainCircuit, Copy, Check, Sparkles, MessageSquareText, Filter, CheckCircle2, HelpCircle } from 'lucide-react'
+import { useState } from 'react'
 import { PortalFrame } from '@/components/portal-shell'
 
 const features = [
-  ['Socratic Mode & Dialogue', 'Reconstructs incoming queries through probing questions to discover latent intent before executing complex tasks.', BrainCircuit],
-  ['Edge Token Efficiency', 'Optimized context-window compaction enabling complex inference pipelines over low-bandwidth rural networks.', WifiOff],
-  ['Zero Telemetry Privacy', 'Conversational history remains local to the user client with local key derivation for session encryption.', Sparkles],
+  ['Socratic Dialogue Engine', 'Reconstructs incoming queries through probing questions to discover latent intent before executing complex tasks.', BrainCircuit],
+  ['Edge Token Efficiency', 'Optimized context-window compaction enabling complex inference pipelines over low-bandwidth rural networks.', Sparkles],
+  ['Zero Telemetry Privacy', 'Conversational history remains local to the user client with local key derivation for session encryption.', Check],
 ] as const
 
 interface PresetScenario {
@@ -68,10 +68,12 @@ const presets: PresetScenario[] = [
 ]
 
 export default function Arif() {
+  const [copied, setCopied] = useState(false)
   const [activePresetIndex, setActivePresetIndex] = useState(0)
   const [customQuery, setCustomQuery] = useState('')
   const [activeTab, setActiveTab] = useState<'arif' | 'standard'>('arif')
 
+  const code = 'from zabibu_arif import evaluate\n\nresponse = evaluate("Identify hidden assumptions before execution.")'
   const currentPreset = presets[activePresetIndex]
 
   return (
@@ -80,12 +82,10 @@ export default function Arif() {
         {/* Hero Section */}
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
           <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-400/10 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-amber-400">
-              <Sparkles className="size-4" /> Flagship / Cognition
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/20 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-amber-400">
+              <BrainCircuit className="size-4" /> Flagship Cognition
             </div>
-            <h1 className="max-w-3xl text-5xl font-bold tracking-tight text-white md:text-7xl">
-              Zabibu Arif <span className="text-amber-400">✨</span>
-            </h1>
+            <h1 className="text-5xl font-bold tracking-tight text-white md:text-7xl">Zabibu Arif</h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80">
               Zabibu Arif is an intelligent companion powered by Fikra Engine, combining advanced conversational intelligence with thoughtful, human-centered interactions.
             </p>
@@ -97,7 +97,7 @@ export default function Arif() {
                 href="https://zabibuarif.lovable.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="glow-button inline-flex items-center gap-2 bg-amber-500 px-5 py-3 text-xs font-bold uppercase tracking-wider text-black font-semibold hover:bg-amber-400 transition-colors"
+                className="glow-button inline-flex items-center gap-2 bg-amber-500 px-5 py-3 text-xs font-bold uppercase tracking-wider text-black font-semibold"
               >
                 Launch Arif Engine <ArrowUpRight className="size-4" />
               </a>
@@ -109,7 +109,7 @@ export default function Arif() {
               </a>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-amber-500/30 bg-amber-950/20 shadow-[0_30px_100px_rgba(245,158,11,.18)]">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-amber-500/30 bg-amber-950/20 shadow-[0_30px_100px_rgba(245,158,11,.16)]">
             <Image
               src="/images/arif.png"
               alt="Zabibu Arif interface"
@@ -120,7 +120,25 @@ export default function Arif() {
           </div>
         </div>
 
-        {/* Specs Section */}
+        {/* Terminal Code Snippet Block */}
+        <div className="mt-12 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-6">
+          <div className="flex justify-between font-mono text-xs text-white/60">
+            <span>arif@zabibu:~$ run reasoning_pipe</span>
+            <button
+              onClick={() => {
+                navigator.clipboard?.writeText(code)
+                setCopied(true)
+                setTimeout(() => setCopied(false), 2000)
+              }}
+              aria-label="Copy example"
+            >
+              {copied ? <Check className="size-4 text-amber-400" /> : <Copy className="size-4" />}
+            </button>
+          </div>
+          <pre className="mt-6 whitespace-pre-wrap text-sm leading-8 text-amber-200">{code}</pre>
+        </div>
+
+        {/* Model Matrix Section */}
         <section id="specs" className="mt-20">
           <div className="mb-7 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-400">
             01 / System matrix
@@ -136,13 +154,13 @@ export default function Arif() {
           </div>
         </section>
 
-        {/* Feature #1: The Direct Answer Filter (Interactive Widget) */}
-        <section id="filter-demo" className="mt-20 rounded-3xl border border-amber-500/30 bg-black/40 p-6 md:p-10 backdrop-blur-md">
+        {/* The Direct Answer Filter Section */}
+        <section id="filter-demo" className="mt-20 rounded-2xl border border-amber-500/30 bg-amber-950/20 p-6 md:p-10">
           <div className="mb-2 font-mono text-[10px] uppercase tracking-[0.2em] text-amber-400">
             02 / Diagnostic Engine Demo
           </div>
           <h2 className="text-2xl font-bold text-white md:text-3xl">The Direct Answer Filter</h2>
-          <p className="mt-2 max-w-2xl text-sm leading-6 text-white/60">
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-white/55">
             See how Arif strips out standard AI filler and conversational fluff to deliver concise execution steps alongside targeted diagnostic questions.
           </p>
 
@@ -157,8 +175,8 @@ export default function Arif() {
                 }}
                 className={`rounded-xl border px-4 py-2 text-xs font-bold transition-all ${
                   activePresetIndex === idx && !customQuery
-                    ? 'border-amber-500 bg-amber-500/20 text-amber-300 shadow-[0_0_15px_rgba(245,158,11,0.2)]'
-                    : 'border-white/10 bg-white/[0.03] text-white/60 hover:border-amber-500/40 hover:bg-white/[0.08]'
+                    ? 'border-amber-500 bg-amber-500/20 text-amber-300'
+                    : 'border-amber-500/20 bg-black/20 text-white/60 hover:border-amber-500/40'
                 }`}
               >
                 {preset.label}
@@ -166,8 +184,8 @@ export default function Arif() {
             ))}
           </div>
 
-          {/* Active Query Display / Input Box */}
-          <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-4">
+          {/* Prompt Input Box */}
+          <div className="mt-6 rounded-xl border border-amber-500/20 bg-black/40 p-4">
             <div className="flex items-center gap-2 font-mono text-[10px] text-amber-400 uppercase tracking-widest mb-2">
               <MessageSquareText className="size-3" /> Input Prompt Query
             </div>
@@ -180,13 +198,13 @@ export default function Arif() {
             />
           </div>
 
-          {/* Toggle Switch: Standard AI vs. Arif Diagnostic Engine */}
-          <div className="mt-6 flex items-center justify-between rounded-xl border border-white/10 bg-black/60 p-1.5">
+          {/* Toggle Switch */}
+          <div className="mt-6 flex items-center justify-between rounded-xl border border-amber-500/20 bg-black/60 p-1.5">
             <button
               onClick={() => setActiveTab('arif')}
               className={`flex-1 flex items-center justify-center gap-2 rounded-lg py-2 text-xs font-bold uppercase tracking-wider transition-all ${
                 activeTab === 'arif'
-                  ? 'bg-amber-500 text-black shadow-md'
+                  ? 'bg-amber-500 text-black font-semibold'
                   : 'text-white/50 hover:text-white'
               }`}
             >
@@ -204,21 +222,21 @@ export default function Arif() {
             </button>
           </div>
 
-          {/* Response Box */}
-          <div className="mt-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 p-6 min-h-[220px]">
+          {/* Output Display Box */}
+          <div className="mt-4 rounded-xl border border-amber-500/20 bg-black/40 p-6 min-h-[220px]">
             {activeTab === 'arif' ? (
               <div className="space-y-6">
                 <div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-amber-400/80">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-amber-400">
                     Core Intention Identified
                   </span>
-                  <p className="mt-1 text-sm font-semibold text-white/90">
+                  <p className="mt-1 text-sm font-semibold text-white">
                     {customQuery ? `Diagnostic intent analysis for: "${customQuery}"` : currentPreset.arifFilter.coreIntent}
                   </p>
                 </div>
 
                 <div>
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-amber-400/80">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-amber-400">
                     3-Step Action Plan
                   </span>
                   <ul className="mt-3 space-y-2.5">
@@ -238,7 +256,7 @@ export default function Arif() {
                   </ul>
                 </div>
 
-                <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-4">
+                <div className="rounded-xl border border-amber-500/30 bg-amber-950/40 p-4">
                   <div className="flex items-center gap-2 text-xs font-bold text-amber-400">
                     <HelpCircle className="size-4" /> Diagnostic Socratic Follow-Up
                   </div>
