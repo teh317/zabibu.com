@@ -32,25 +32,27 @@ const fallbackPosts: PostItem[] = [
 ];
 
 export default function Dispatches() {
-  const [posts, setPosts] = useState<PostItem[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [posts, setPosts] = useState<PostItem[]>(fallbackPosts);
 
   useEffect(() => {
     fetch('/api/dispatches')
       .then((res) => res.json())
       .then((data) => {
-        if (data.items && data.items.length > 0) {
-          // If we have live posts, use ONLY live posts!
-          setPosts(data.items);
-        } else {
-          // Fallback only if Medium is completely unreachable
-          setPosts(fallbackPosts);
+        if (data.items && Array.isArray(data.items) && data.items.length > 0) {
+          // Sort explicitly by Unix timestamp descending (most recent first)
+          const sorted = [...data.items].sort((a, b) => {
+            const timeA = new Date(a.pubDate).getTime();
+            const timeB = new Date(b.pubDate).getTime();
+            return timeB - timeA;
+          });
+
+          // OVERWRITE posts completely with live data (do not append to fallbacks)
+          setPosts(sorted);
         }
       })
       .catch(() => {
-        setPosts(fallbackPosts);
-      })
-      .finally(() => setLoading(false));
+        // Retain hardcoded fallbackPosts only if API request fails completely
+      });
   }, []);
 
   const cleanSnippet = (htmlString?: string) => {
@@ -81,7 +83,7 @@ export default function Dispatches() {
         copy="Engineering essays, manifestos, and field reports from Nairobi and the low-spec frontier."
       />
       <div className="grid gap-4 md:grid-cols-3">
-        {(loading ? fallbackPosts : posts).map((post, i) => (
+        {posts.map((post, i) => (
           <article className="post-card" key={post.link || i}>
             <p className="text-xs uppercase tracking-widest text-accent">
               {formatDate(post.pubDate)}
