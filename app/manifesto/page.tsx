@@ -84,7 +84,7 @@ export default function Manifesto() {
         {/* Header / Hero */}
         <div className="max-w-3xl">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-500/30 bg-amber-950/20 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-amber-400">
-            <Sparkles className="size-4" /> Zabibu Technica / Philosophy
+            <Sparkles className="size-4" /> Zabibu Technika / Philosophy
           </div>
           <h1 className="text-4xl font-bold tracking-tight text-white md:text-6xl">
             The Sovereign Computing Manifesto
@@ -206,7 +206,7 @@ export default function Manifesto() {
             <Terminal className="size-4" /> 04 / Direct Dispatch
           </div>
           <h2 className="text-2xl font-bold text-white md:text-3xl">
-            Partner With Zabibu Technica
+            Partner With Zabibu Technika
           </h2>
           <p className="mt-2 max-w-2xl text-sm leading-6 text-white/60">
             Whether you are an investor seeking to capitalize sovereign African computing or a builder ready to ship open weights, transmit your dispatch directly to our core studio team.
