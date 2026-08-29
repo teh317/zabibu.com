@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import {
   MessageSquare,
   Briefcase,
@@ -10,11 +11,10 @@ import {
   CheckCircle2,
   Lock,
   ThumbsUp,
-  UserCheck,
   Sparkles,
   Search,
   PlusCircle,
-  HeartHandshake
+  Mail
 } from 'lucide-react'
 import { PortalFrame, SectionHeading } from '@/components/portal-shell'
 
@@ -35,7 +35,7 @@ interface Post {
   isPinned?: boolean
 }
 
-// --- Initial Authentic Data (No generic filler) ---
+// --- Initial Authentic Data ---
 const INITIAL_POSTS: Post[] = [
   {
     id: 'post-1',
@@ -245,7 +245,7 @@ export default function Community() {
       />
 
       {/* Primary Channel Gateways */}
-      <div className="grid gap-4 md:grid-cols-3 my-8">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 my-8">
         <a
           href="https://whatsapp.com/channel/0029VbC0Nnj5a248TWBGLk2s"
           target="_blank"
@@ -259,7 +259,7 @@ export default function Community() {
         </a>
 
         <a
-          href="https://x.com/zabibutechnika"
+          href="https://x.com/zabibutehnika"
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-2xl border border-cyan-500/30 bg-cyan-950/10 p-5 hover:border-cyan-400 transition-all block"
@@ -267,7 +267,7 @@ export default function Community() {
           <span className="font-mono text-[10px] uppercase tracking-wider text-cyan-400">Public Debates</span>
           <h3 className="text-lg font-bold text-white mt-2">X / Twitter Hub</h3>
           <p className="text-xs text-white/60 mt-1">Philosophical sparring on edge AI and local-first stack.</p>
-          <span className="text-xs font-bold text-cyan-400 mt-4 inline-block">Follow @zabibutechnika ↗</span>
+          <span className="text-xs font-bold text-cyan-400 mt-4 inline-block">Follow @zabibutehnika ↗</span>
         </a>
 
         <a
@@ -281,6 +281,18 @@ export default function Community() {
           <p className="text-xs text-white/60 mt-1">Back edge research directly via M-Pesa or Card.</p>
           <span className="text-xs font-bold text-amber-400 mt-4 inline-block">Back Project ↗</span>
         </a>
+
+        <Link
+          href="/contact"
+          className="rounded-2xl border border-purple-500/30 bg-purple-950/10 p-5 hover:border-purple-400 transition-all block"
+        >
+          <span className="font-mono text-[10px] uppercase tracking-wider text-purple-400">Direct Node</span>
+          <h3 className="text-lg font-bold text-white mt-2">Contact Portal</h3>
+          <p className="text-xs text-white/60 mt-1">Press, partnerships, licensing, and direct executive desk.</p>
+          <span className="text-xs font-bold text-purple-400 mt-4 inline-block flex items-center gap-1">
+            Open Portal <Mail className="size-3 inline" />
+          </span>
+        </Link>
       </div>
 
       {/* Main Forum Header Controls */}
