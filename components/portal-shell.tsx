@@ -6,7 +6,7 @@ import { Menu, X, ArrowUpRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
 
-const logo = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Zabibu-Logo-White%20Wording-dyObOw9Pzq4ZB1XWi5jiu33AQOOzpg.png'
+const logo = '/images/logo.png'
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/hub', label: 'Hub' },
@@ -94,7 +94,7 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
 
       {children}
 
-      <footer className="border-t border-white/10 px-5 py-14 md:px-10">
+      <footer className="relative z-10 border-t border-white/10 bg-black/40 px-5 py-14 backdrop-blur-md md:px-10">
         <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
             <Link href="/">
