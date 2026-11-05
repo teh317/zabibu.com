@@ -33,6 +33,7 @@ const company = [
   { href: '/about', label: 'About' },
   { href: '/investors', label: 'Investors' },
   { href: '/dispatches', label: 'Dispatches' },
+  { href: '/manifesto', label: 'Manifesto' },
   { href: '/community', label: 'Community' },
   { href: 'mailto:zabibutechnika@gmail.com', label: 'Contact' },
 ]
