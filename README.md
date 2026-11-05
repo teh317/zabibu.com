@@ -23,7 +23,7 @@ This repository serves as the central digital portal for the Zabibu Technika pro
 | **Arif Agent** | Autonomous, multi-axis execution | Violet / Teal | https://arifagent.vercel.app |
 | **ZabibuOS** | Local-first operating layer | Cyan / Teal | https://zabibu.lovable.app |
 | **Zabibu Canary** | Code review & human-in-the-loop validation | Amber / Red | https://zabibucanary.vercel.app |
-| **Phosh.cpp** | Middleware adapter atop llama.cpp | Fuchsia / Violet | `app/phosh` |
+| **Phosh.cpp** | Silicon-level optimized edge inference engine; Fikra Edge Runtime is the enterprise layer | Fuchsia / Violet | `app/phosh` |
 | **Weaver** | Open-source core engine & agentic toolkit | Violet / Cyan | https://zabibuweaver.vercel.app |
 | **Kanari** | Telemetry-free local diagnostics | Teal / Emerald | `app/kanari` |
 | **Sigana** | Zero-login media center | Emerald / Green | https://sigana.lovable.app |
@@ -68,7 +68,7 @@ zabibu.com/
 │   │   └── dispatches/        # Server-side Medium RSS Parser & API Route
 │   ├── arif/                  # Zabibu Arif Product Portal
 │   ├── hub/                   # Categorized ecosystem hub
-│   ├── phosh/                 # Phosh.cpp middleware portal
+│   ├── phosh/                 # Phosh.cpp edge inference portal
 │   ├── kanari/                # Kanari diagnostics portal
 │   ├── dispatches/            # Field Notes & Medium RSS Feed Page
 │   ├── ella/                  # Ella App Portal

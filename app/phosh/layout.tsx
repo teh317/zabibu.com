@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Phosh.cpp — Fikra Edge Runtime — Zabibu Technika',
   description:
-    'Phosh.cpp is a local kernel middleware adapter built atop llama.cpp, with an open MIT client and the proprietary Fikra Edge Runtime edition.',
+    'Phosh.cpp is an open-source, silicon-level optimized edge inference engine delivering cloud-grade speeds on budget hardware, entirely offline. Fikra Edge Runtime is the proprietary enterprise layer.',
   alternates: { canonical: '/phosh' },
 }
 

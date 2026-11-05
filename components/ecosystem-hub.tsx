@@ -113,10 +113,10 @@ const sections: HubSection[] = [
       },
       {
         title: 'Phosh.cpp',
-        label: 'Middleware',
-        text: 'Local kernel middleware adapter atop llama.cpp. One source tree, two editions: the open Phosh client and the proprietary Fikra Edge Runtime.',
+        label: 'Edge Engine',
+        text: 'A silicon-level optimized edge inference engine. Cloud-grade speed on budget hardware, entirely offline. Fikra Edge Runtime is the enterprise layer.',
         href: '/phosh',
-        snippet: '$ cmake -S . -B build\n  -DPHOSH_EDITION=open\n$ ./phosh --local',
+        snippet: '$ phosh run fikra-model-1 --offline\n[phosh] network: disabled\n[phosh] local only',
         meta: 'MIT + Pro',
         span: 'lg:col-span-1',
         secondary: [{ label: 'Runtime access', href: 'mailto:zabibutechnika@gmail.com?subject=Phosh.cpp%20/%20Fikra%20Edge%20Runtime' }],
