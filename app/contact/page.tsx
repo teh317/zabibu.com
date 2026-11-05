@@ -55,8 +55,8 @@ const socialLinks = [
   },
   {
     name: 'X (Twitter)',
-    handle: '@zabibutehnika',
-    url: 'https://x.com/zabibutehnika',
+    handle: '@zabibutechnika',
+    url: 'https://x.com/zabibutechnika',
   },
   {
     name: 'WhatsApp Channel',
@@ -73,7 +73,7 @@ const pressReferences = [
     date: 'Official Essay',
   },
   {
-    title: 'Zabibu-Fikra-2B Open Intelligence Weights',
+    title: 'Zabibu Fikra Model 1 - 2B Open Intelligence Weights',
     source: 'Hugging Face Repository',
     link: 'https://huggingface.co/zabibutechnika/Zabibu-Fikra-2B',
     date: 'Model Artifact',

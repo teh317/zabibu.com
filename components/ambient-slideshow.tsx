@@ -40,8 +40,8 @@ export function AmbientSlideshow() {
         />
       </div>
       {/* Soft gradient curtain so it darkens behind text content but remains fully visible */}
-      <div className="absolute inset-0 bg-[#070708]/65 backdrop-blur-[2px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#070708]/40 via-transparent to-[#070708]/80" />
+      <div className="absolute inset-0 bg-[#030305]/65 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030305]/40 via-transparent to-[#030305]/80" />
     </div>
   );
 }

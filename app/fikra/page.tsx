@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowDown, ArrowUpRight, Code, Copy, Check, Cpu, Database, Terminal, Layers } from 'lucide-react'
 import { useState } from 'react'
 import { PortalFrame } from '@/components/portal-shell'
@@ -36,7 +37,7 @@ export default function Fikra() {
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-fuchsia-500/30 bg-fuchsia-950/20 px-3 py-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-fuchsia-400">
               <Code className="size-4" /> Open weights
             </div>
-            <h1 className="text-5xl font-bold tracking-tight text-white md:text-7xl">Fikra 2B</h1>
+            <h1 className="text-5xl font-bold tracking-tight text-white md:text-7xl">Fikra Model 1 - 2B</h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/80">
               Small, sharp, open reasoning weights built on Gemma architecture for the next generation of makers.
             </p>
@@ -63,12 +64,29 @@ export default function Fikra() {
           <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-fuchsia-500/30 bg-fuchsia-950/20 shadow-[0_30px_100px_rgba(217,70,239,.16)]">
             <Image
               src="/images/fikra.png"
-              alt="Fikra 2B model interface"
+              alt="Fikra Model 1 - 2B model interface"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 48vw"
             />
           </div>
+        </div>
+
+        <div className="mt-8 flex flex-col justify-between gap-4 rounded-2xl border border-fuchsia-500/25 bg-fuchsia-950/10 p-5 md:flex-row md:items-center">
+          <div>
+            <span className="tag">Proprietary sibling</span>
+            <p className="mt-3 max-w-3xl text-sm leading-6 text-white/60">
+              <span className="font-semibold text-white">Fikra Edge Runtime</span> is the closed
+              runtime edition for local agentic deployment, built atop llama.cpp and exposed
+              through the <span className="text-fuchsia-300">Phosh.cpp</span> client.
+            </p>
+          </div>
+          <Link
+            href="/phosh"
+            className="inline-flex shrink-0 items-center gap-2 border border-fuchsia-500/30 px-4 py-2.5 font-mono text-[10px] font-bold uppercase tracking-wider text-fuchsia-300 transition-colors hover:bg-fuchsia-500/10"
+          >
+            Explore Phosh.cpp <ArrowUpRight className="size-3.5" />
+          </Link>
         </div>
 
         {/* Terminal Code Snippet Block */}
