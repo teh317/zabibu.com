@@ -76,9 +76,10 @@ export default function Fikra() {
           <div>
             <span className="tag">Proprietary sibling</span>
             <p className="mt-3 max-w-3xl text-sm leading-6 text-white/60">
-              <span className="font-semibold text-white">Fikra Edge Runtime</span> is the closed
-              runtime edition for local agentic deployment, built atop llama.cpp and exposed
-              through the <span className="text-fuchsia-300">Phosh.cpp</span> client.
+              <span className="font-semibold text-white">Fikra Edge Runtime</span> is the
+              production-grade enterprise deployment layer for Fikra models: maximum efficiency,
+              resilient agentic workflows, and absolute local data sovereignty — exposed through
+              the <span className="text-fuchsia-300">Phosh.cpp</span> engine.
             </p>
           </div>
           <Link

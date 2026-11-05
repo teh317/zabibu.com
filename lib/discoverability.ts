@@ -42,7 +42,7 @@ export const projects = {
   },
   phosh: {
     name: 'Phosh.cpp',
-    description: 'Local kernel middleware adapter atop llama.cpp, with an open client and the proprietary Fikra Edge Runtime edition.',
+    description: 'An open-source, silicon-level optimized edge inference engine for cloud-grade speeds on budget hardware, entirely offline.',
     url: '/phosh',
   },
   kanari: {
