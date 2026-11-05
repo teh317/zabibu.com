@@ -43,8 +43,8 @@ const INITIAL_POSTS: Post[] = [
     handle: '@k_mutua',
     location: 'Nairobi, KE',
     category: 'developers',
-    title: 'Fikra 2B 4-bit Quantization Benchmarks on Snapdragon 680',
-    message: 'Managed to run Fikra 2B edge weights locally on an entry-level Android device with zero cloud latency. Memory footprint sat cleanly under 1.2GB. Pushing quantization scripts to GitHub today.',
+    title: 'Fikra Model 1 - 2B 4-bit Quantization Benchmarks on Snapdragon 680',
+    message: 'Managed to run Fikra Model 1 - 2B edge weights locally on an entry-level Android device with zero cloud latency. Memory footprint sat cleanly under 1.2GB. Pushing quantization scripts to GitHub today.',
     upvotes: 24,
     time: '3 hours ago',
     isPinned: true,
@@ -203,21 +203,49 @@ export default function Community() {
   }
 
   // Handle Job/Volunteer Application Dispatch to Email
-  const handleRecruitmentSubmit = (e: React.FormEvent) => {
+  const handleRecruitmentSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!appEmail || !appName || !appBio) return
 
     setAppLoading(true)
-    const subject = encodeURIComponent(`[Zabibu Careers/Volunteer] ${appRole} - ${appName}`)
-    const body = encodeURIComponent(
-      `Name: ${appName}\nEmail: ${appEmail}\nTrack/Role: ${appRole}\nGitHub/Portfolio: ${appLinks}\n\nBackground & Motivation:\n${appBio}`
-    )
 
-    setTimeout(() => {
-      window.location.href = `mailto:zabibutechnika@gmail.com?subject=${subject}&body=${body}`
-      setAppLoading(false)
+    const subject = `[Zabibu Careers/Volunteer] ${appRole} - ${appName}`
+    const body = `Name: ${appName}\nEmail: ${appEmail}\nTrack/Role: ${appRole}\nGitHub/Portfolio: ${appLinks}\n\nBackground & Motivation:\n${appBio}`
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/zabibutechnika@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          _subject: subject,
+          Name: appName,
+          Email: appEmail,
+          Role: appRole,
+          Links: appLinks,
+          Background: appBio,
+          Source: 'Zabibu Technika Community /recruitment',
+        }),
+      })
+
+      if (response.ok) {
+        setAppSent(true)
+      } else {
+        const encodedSubject = encodeURIComponent(subject)
+        const encodedBody = encodeURIComponent(body)
+        window.location.href = `mailto:zabibutechnika@gmail.com?subject=${encodedSubject}&body=${encodedBody}`
+        setAppSent(true)
+      }
+    } catch {
+      const encodedSubject = encodeURIComponent(subject)
+      const encodedBody = encodeURIComponent(body)
+      window.location.href = `mailto:zabibutechnika@gmail.com?subject=${encodedSubject}&body=${encodedBody}`
       setAppSent(true)
-    }, 500)
+    } finally {
+      setAppLoading(false)
+    }
   }
 
   // Filter posts based on active category tab and search query
