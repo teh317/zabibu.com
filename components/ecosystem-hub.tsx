@@ -89,7 +89,7 @@ const sections: HubSection[] = [
         label: 'Operating Layer',
         text: 'A local-first operating layer for African builders and real-world constraints. Built for the hardware people actually have.',
         href: 'https://zabibu.lovable.app',
-        image: '/images/zabibuos.jpg',
+        image: '/images/zabibu.png',
         meta: 'Local-first',
         span: 'md:col-span-1 lg:col-span-2',
         secondary: [{ label: 'Product page', href: '/zabibuos' }],
