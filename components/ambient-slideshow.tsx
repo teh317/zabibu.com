@@ -29,7 +29,7 @@ export function AmbientSlideshow() {
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
-      <div className="absolute inset-0 opacity-65 transition-transform duration-1000 ease-in-out" style={{ transform: 'scale(1.05)' }}>
+      <div className="absolute inset-0 opacity-80 transition-transform duration-1000 ease-in-out" style={{ transform: 'scale(1.05)' }}>
         <Image
           key={images[currentIndex]}
           src={images[currentIndex]}
@@ -40,8 +40,8 @@ export function AmbientSlideshow() {
         />
       </div>
       {/* Soft gradient curtain so it darkens behind text content but remains fully visible */}
-      <div className="absolute inset-0 bg-[#030305]/65 backdrop-blur-[2px]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#030305]/40 via-transparent to-[#030305]/80" />
+      <div className="absolute inset-0 bg-[#030305]/55 backdrop-blur-[2px]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#030305]/25 via-transparent to-[#030305]/75" />
     </div>
   );
 }
