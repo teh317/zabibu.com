@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { ArrowUpRight, BrainCircuit, Cpu, HeartPulse, Layers } from 'lucide-react'
 import { AmbientSlideshow } from '@/components/ambient-slideshow'
-import { PortalFrame } from '@/components/portal-shell'
 
 const pillars = [
   {
@@ -92,8 +91,9 @@ export default function Home() {
         </section>
 
         {/* Why we exist */}
-        <PortalFrame className="py-20 md:py-28">
-          <div className="grid gap-12 md:grid-cols-[.8fr_1.2fr]">
+        <section className="relative border-y border-white/10 bg-[#030305]/30 px-5 py-20 backdrop-blur-[1px] md:px-10 md:py-28">
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-12 md:grid-cols-[.8fr_1.2fr]">
             <div>
               <p className="eyebrow">Why we exist</p>
               <h2 className="mt-3 text-balance text-4xl font-black tracking-tight md:text-6xl">
@@ -123,8 +123,9 @@ export default function Home() {
                 Read the full story <ArrowUpRight className="size-4" />
               </Link>
             </div>
+            </div>
           </div>
-        </PortalFrame>
+        </section>
 
         {/* Proof strip */}
         <section className="border-y border-white/10 bg-black/45 backdrop-blur-md">
@@ -139,7 +140,7 @@ export default function Home() {
         </section>
 
         {/* What we build — a compact pitch, not the hub */}
-        <PortalFrame className="py-20 md:py-28">
+        <section className="relative mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
           <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
             <div className="max-w-3xl">
               <p className="eyebrow">The practice</p>
@@ -190,7 +191,7 @@ export default function Home() {
               )
             })}
           </div>
-        </PortalFrame>
+        </section>
 
         {/* Principles */}
         <section className="border-y border-white/10 bg-black/45 backdrop-blur-md">
@@ -214,7 +215,7 @@ export default function Home() {
         </section>
 
         {/* Founder quote */}
-        <PortalFrame className="py-20 md:py-28">
+        <section className="relative mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
           <div className="manifesto p-8 md:p-14">
             <p className="eyebrow text-accent">The through-line</p>
             <blockquote className="mt-6 max-w-4xl text-2xl font-semibold leading-relaxed text-white md:text-4xl">
@@ -236,7 +237,7 @@ export default function Home() {
               Read the manifesto <ArrowUpRight className="ml-2 size-4" />
             </Link>
           </div>
-        </PortalFrame>
+        </section>
 
         {/* Final pitch */}
         <section className="border-t border-white/10 bg-black/50 backdrop-blur-md">
