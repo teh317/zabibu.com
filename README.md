@@ -41,6 +41,38 @@ This repository serves as the central digital portal for the Zabibu Technika pro
 
 ---
 
+## 🔎 SEO & AI discoverability
+
+- The canonical origin defaults to `https://zabibu.vercel.app`. Set `NEXT_PUBLIC_SITE_URL` to the custom domain once it is live (for example `https://zabibutechnika.com`).
+- Set `GOOGLE_SITE_VERIFICATION` and `BING_SITE_VERIFICATION` in the deployment environment to claim the site in Search Console and Bing Webmaster Tools.
+- Generated endpoints: `/sitemap.xml`, `/robots.txt`, `/manifest.webmanifest`, `/llms.txt`, and `/llms-full.txt`.
+- Structured data includes `Organization`, `WebSite`, `WebPage`, `FAQPage`, `AboutPage`, `ItemList`, and `SoftwareApplication` on product pages.
+- `robots.ts` explicitly allows major AI crawlers: GPTBot, ChatGPT-User, OAI-SearchBot, PerplexityBot, ClaudeBot, anthropic-ai, Google-Extended, CCBot, and Applebot-Extended.
+- Every public page has a unique title, description, canonical URL, Open Graph/Twitter card, and the 1200×630 `/images/og-image.png` social image.
+
+### IndexNow webhook
+
+Set `INDEXNOW_KEY` (served at `/indexnow-key.txt`) and `INDEXNOW_WEBHOOK_SECRET` in the deployment environment. The webhook is edge-hosted and accepts 1–10 same-origin paths:
+
+```bash
+curl -X POST https://zabibu.vercel.app/api/indexnow \
+  -H "Authorization: Bearer $INDEXNOW_WEBHOOK_SECRET" \
+  -H "content-type: application/json" \
+  -d '{"paths":["/hub","/fikra","/phosh"]}'
+```
+
+`GET /api/indexnow/status` reports whether the key and secret are configured without exposing either value. `x-indexnow-signature` is also accepted in place of the bearer token.
+
+### GEO endpoints
+
+- `/llms.txt` — concise company and product context for AI systems.
+- `/llms-full.txt` — expanded company story, products, timeline, and FAQ.
+- `/api/geo/summary` — JSON summary of the company, products, and FAQ for search agents.
+- `/alternatives/why-we-are-better` — a factual cloud-first vs local-first comparison.
+- `/badges` — an embeddable badge with descriptive anchor text.
+
+---
+
 ## 🚀 Getting Started Locally
 
 ### Prerequisites

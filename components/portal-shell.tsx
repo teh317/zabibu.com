@@ -36,6 +36,8 @@ const company = [
   { href: '/dispatches', label: 'Dispatches' },
   { href: '/manifesto', label: 'Manifesto' },
   { href: '/community', label: 'Community' },
+  { href: '/alternatives/why-we-are-better', label: 'Why local-first' },
+  { href: '/badges', label: 'Badges' },
   { href: 'mailto:zabibutechnika@gmail.com', label: 'Contact' },
 ]
 
@@ -102,7 +104,8 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
               <img src={logo} alt="Zabibu Technika" className="h-11 w-auto" />
             </Link>
             <p className="mt-5 max-w-xs text-sm leading-6 text-muted-foreground">
-              Sovereign, local-first software from Nairobi for the global South.
+              Zabibu Technika is an AI and technology company in Nairobi, Kenya, building
+              sovereign, local-first software for Africa and the global South.
             </p>
             <p className="mt-6 eyebrow">Nairobi, Kenya / East Africa</p>
           </div>
@@ -115,6 +118,7 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
           <div className="flex flex-wrap items-center gap-5">
             <Link href="/">Privacy</Link>
             <Link href="/">Terms</Link>
+            <a href="/llms.txt" className="transition-colors hover:text-white">llms.txt</a>
             <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-accent/80">Designed from Nairobi.</span>
           </div>
         </div>

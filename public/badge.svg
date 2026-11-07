@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="56" viewBox="0 0 240 56" role="img" aria-label="Zabibu Technika — AI and technology company in Nairobi, Kenya">
+  <title>Zabibu Technika — AI and technology company in Nairobi, Kenya</title>
+  <rect x="0.5" y="0.5" width="239" height="55" rx="12" fill="#030305" stroke="#2a2440"/>
+  <circle cx="28" cy="28" r="12" fill="#8b2cff"/>
+  <circle cx="28" cy="28" r="4" fill="#030305" opacity="0.55"/>
+  <text x="48" y="25" fill="#f4f1f8" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700">Zabibu Technika</text>
+  <text x="48" y="39" fill="#b887ff" font-family="Consolas, monospace" font-size="8" letter-spacing="1.2">SOVEREIGN AI · NAIROBI</text>
+</svg>

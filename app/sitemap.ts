@@ -2,21 +2,51 @@ import type { MetadataRoute } from 'next'
 import { absoluteUrl, projects } from '@/lib/discoverability'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const paths = [
+  const staticPaths = [
     '/',
     '/hub',
     '/about',
     '/community',
     '/dispatches',
     '/investors',
-    ...Object.values(projects)
-      .map((project) => project.url)
-      .filter((url) => url.startsWith('/')),
+    '/manifesto',
+    '/contact',
+    '/alternatives/why-we-are-better',
+    '/badges',
   ]
-  return paths.map((path) => ({
-    url: absoluteUrl(path),
-    lastModified: new Date(),
-    changeFrequency: 'weekly',
-    priority: path === '/' ? 1 : 0.7,
-  }))
+
+  const projectPaths = Object.values(projects)
+    .map((project) => project.url)
+    .filter((url) => url.startsWith('/'))
+
+  const paths = [...new Set([...staticPaths, ...projectPaths])]
+
+  return paths.map((path) => {
+    const changeFrequency: 'weekly' | 'monthly' = path === '/' ? 'weekly' : 'monthly'
+    const priority =
+      path === '/'
+        ? 1
+        : path === '/hub'
+          ? 0.9
+          : path === '/about'
+            ? 0.8
+            : path.startsWith('/arif') ||
+                path.startsWith('/fikra') ||
+                path.startsWith('/zabibuos') ||
+                path.startsWith('/sigana') ||
+                path.startsWith('/ella') ||
+                path.startsWith('/phosh')
+              ? 0.8
+              : 0.6
+
+    return {
+      url: absoluteUrl(path),
+      lastModified: new Date(),
+      changeFrequency,
+      priority,
+      ...(path === '/'
+        ? { images: [absoluteUrl('/images/og-image.png')] }
+        : {}),
+    }
+  })
 }

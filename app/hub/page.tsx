@@ -1,5 +1,7 @@
 import { EcosystemHub } from '@/components/ecosystem-hub'
 import { PortalFrame } from '@/components/portal-shell'
+import { QuotableSummary } from '@/components/quotable-summary'
+import { itemListSchema, JsonLd, breadcrumbSchema } from '@/lib/seo'
 
 export default function Hub() {
   return (
@@ -11,6 +13,13 @@ export default function Hub() {
       </div>
 
       <div className="hub-shell relative z-10 p-5 md:p-10">
+        <JsonLd data={itemListSchema()} />
+        <JsonLd
+          data={breadcrumbSchema([
+            { name: 'Home', path: '/' },
+            { name: 'Ecosystem Hub', path: '/hub' },
+          ])}
+        />
         <header className="mx-auto mb-12 max-w-3xl text-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/55">
             <span className="pulse-dot" aria-hidden="true" /> Zabibu hub / sub-apps
@@ -24,6 +33,13 @@ export default function Hub() {
             operating systems and media, core systems and runtimes, and the Fikra model lineup.
           </p>
         </header>
+        <div className="mb-10">
+          <QuotableSummary cite="Zabibu Technika — product ecosystem">
+            The Zabibu Technika ecosystem includes AI assistants, agentic tools, local-first
+            operating systems, edge runtimes, testing tools, and the Fikra model lineup. Every
+            product is designed in Nairobi, Kenya for real-world constraints.
+          </QuotableSummary>
+        </div>
         <EcosystemHub />
       </div>
     </PortalFrame>

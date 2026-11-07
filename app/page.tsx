@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import { ArrowUpRight, BrainCircuit, Cpu, HeartPulse, Layers } from 'lucide-react'
 import { AmbientSlideshow } from '@/components/ambient-slideshow'
+import { GeoFaq } from '@/components/geo-faq'
+import { QuotableSummary } from '@/components/quotable-summary'
+import { ShareCitation } from '@/components/share-citation'
+import { faqSchema, JsonLd } from '@/lib/seo'
 
 const pillars = [
   {
@@ -63,15 +67,15 @@ export default function Home() {
         <section className="hero-grid relative overflow-hidden px-5 py-24 md:px-10 md:py-36">
           <div className="relative z-10 mx-auto flex min-h-[calc(100vh-10rem)] max-w-7xl flex-col items-center justify-center text-center">
             <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/30 px-3 py-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/60 backdrop-blur-md">
-              <span className="pulse-dot" aria-hidden="true" /> Nairobi, Kenya · Since 2006
+              <span className="pulse-dot" aria-hidden="true" /> AI &amp; technology company · Nairobi, Kenya
             </span>
             <h1 className="mt-7 max-w-6xl text-balance text-6xl font-black leading-[.88] tracking-[-.08em] md:text-8xl lg:text-9xl">
               Tech should feel like <span className="text-gradient">home.</span>
             </h1>
             <p className="mx-auto mt-8 max-w-2xl text-lg leading-8 text-white/70 md:text-xl md:leading-9">
-              Zabibu Technika is an independent research and technology company building
-              sovereign, local-first software for the machines, networks, and languages people
-              actually have.
+              Zabibu Technika is an AI and technology company based in Nairobi, Kenya, building
+              sovereign, local-first software and edge AI for the machines, networks, and
+              languages people actually have.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-3">
               <Link href="/about" className="glow-button pill px-6 py-4 text-xs font-bold uppercase tracking-wider">
@@ -81,13 +85,22 @@ export default function Home() {
                 Why we exist
               </Link>
             </div>
-            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-9 gap-y-3 font-mono text-[10px] uppercase tracking-[0.18em] text-white/45">
+            <div className="mt-10 flex flex-wrap items-center justify-center gap-x-9 gap-y-3 font-mono text-[10px] uppercase tracking-[0.18em] text-white/55">
               <span>Founded 2006</span>
               <span>600+ users</span>
               <span>20 years of R&amp;D</span>
               <span>One verified core</span>
             </div>
           </div>
+        </section>
+
+        {/* Quotable company definition */}
+        <section className="relative mx-auto max-w-4xl px-5 py-10 md:px-10">
+          <QuotableSummary cite="Zabibu Technika — company definition">
+            Zabibu Technika is an AI and technology company based in Nairobi, Kenya. Founded in
+            2006 as Grape Technologies, it builds sovereign, local-first software, edge AI models,
+            and operating systems for Africa and the global South.
+          </QuotableSummary>
         </section>
 
         {/* Why we exist */}
@@ -133,7 +146,7 @@ export default function Home() {
             {stats.map(([value, label]) => (
               <div key={label} className="border-white/10 px-6 py-8 md:border-l md:first:border-l-0">
                 <p className="text-4xl font-black tracking-[-.04em] text-white md:text-5xl">{value}</p>
-                <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-white/45">{label}</p>
+                <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-white/55">{label}</p>
               </div>
             ))}
           </div>
@@ -179,13 +192,13 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-accent transition-colors hover:text-white"
                     >
-                      Open system <ArrowUpRight className="size-3.5" />
+                      Open {pillar.title} <ArrowUpRight className="size-3.5" />
                     </a>
                     <Link
                       href={pillar.detail}
-                      className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/45 transition-colors hover:text-white"
+                      className="font-mono text-[10px] uppercase tracking-[0.14em] text-white/55 transition-colors hover:text-white"
                     >
-                      Product page
+                      Details for {pillar.title}
                     </Link>
                   </div>
                 </article>
@@ -206,7 +219,7 @@ export default function Home() {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {principles.map(([num, title, text]) => (
                 <article key={num} className="rounded-2xl border border-white/10 bg-[#08080b]/80 p-6 backdrop-blur-md">
-                  <span className="font-mono text-[10px] tracking-[0.18em] text-white/35">{num}</span>
+                  <span className="font-mono text-[10px] tracking-[0.18em] text-white/55">{num}</span>
                   <h3 className="mt-4 text-lg font-bold text-white">{title}</h3>
                   <p className="mt-2 text-sm leading-6 text-white/55">{text}</p>
                 </article>
@@ -214,6 +227,22 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* FAQ */}
+        <section className="relative mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
+          <div className="mb-10 max-w-3xl">
+            <p className="eyebrow">Common questions</p>
+            <h2 className="mt-3 text-balance text-4xl font-black tracking-tight md:text-6xl">
+              Zabibu Technika, <span className="text-gradient">in plain language.</span>
+            </h2>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-muted-foreground">
+              Short answers about the company, products, models, and the local-first approach.
+              Open any question for the full answer.
+            </p>
+          </div>
+          <GeoFaq />
+        </section>
+        <JsonLd data={faqSchema()} />
 
         {/* Founder quote */}
         <section className="relative mx-auto max-w-7xl px-5 py-20 md:px-10 md:py-28">
@@ -258,6 +287,9 @@ export default function Home() {
               <Link href="/investors" className="outline-button pill px-6 py-4 text-xs font-bold uppercase tracking-wider">
                 Investor brief
               </Link>
+            </div>
+            <div className="mt-8 flex justify-center">
+              <ShareCitation />
             </div>
           </div>
         </section>

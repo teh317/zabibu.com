@@ -1,12 +1,25 @@
 import type { Metadata } from 'next'
+import { JsonLd, pageMetadata, softwareApplicationSchema } from '@/lib/seo'
 
-export const metadata: Metadata = {
-  title: 'Phosh.cpp — Fikra Edge Runtime — Zabibu Technika',
-  description:
-    'Phosh.cpp is an open-source, silicon-level optimized edge inference engine delivering cloud-grade speeds on budget hardware, entirely offline. Fikra Edge Runtime is the proprietary enterprise layer.',
-  alternates: { canonical: '/phosh' },
-}
+export const metadata: Metadata = pageMetadata(
+  'Phosh.cpp — Edge AI Inference Engine',
+  'Phosh.cpp is an open-source, silicon-level optimized llama.cpp adapter for edge devices from Zabibu Technika, with the proprietary Fikra Edge Runtime.',
+  '/phosh'
+)
 
 export default function PhoshLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      <JsonLd
+        data={softwareApplicationSchema({
+          name: 'Phosh.cpp',
+          description:
+            'An open-source, silicon-level optimized edge inference engine for llama.cpp, from Zabibu Technika in Nairobi, Kenya.',
+          url: 'https://phosh.vercel.app',
+          applicationCategory: 'DeveloperApplication',
+        })}
+      />
+      {children}
+    </>
+  )
 }
