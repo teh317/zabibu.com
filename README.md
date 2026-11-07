@@ -17,16 +17,18 @@ This repository serves as the central digital portal for the Zabibu Technika pro
 
 | Product | Focus / Domain | Palette Theme | Live Portal |
 | :--- | :--- | :--- | :--- |
-| **Zabibu Arif** | Flagship workspace & Socratic companion | Amber / Gold | https://zabibuarif.lovable.app |
-| **Fikra Model 1 - 2B** | Edge engine, open weights & Fikra Edge Runtime | Fuchsia / Violet | https://zabibufikra.vercel.app |
-| **Ella** | Companion layer & encrypted journaling | Rose / Coral | https://heyella.netlify.app |
-| **Arif Agent** | Autonomous, multi-axis execution | Violet / Teal | https://arifagent.vercel.app |
-| **ZabibuOS** | Local-first operating layer | Cyan / Teal | https://zabibu.lovable.app |
-| **Zabibu Canary** | Code review & human-in-the-loop validation | Amber / Red | https://zabibucanary.vercel.app |
-| **Phosh.cpp** | Silicon-level optimized edge inference engine; Fikra Edge Runtime is the enterprise layer | Fuchsia / Violet | `app/phosh` |
-| **Weaver** | Open-source core engine & agentic toolkit | Violet / Cyan | https://zabibuweaver.vercel.app |
-| **Kanari** | Telemetry-free local diagnostics | Teal / Emerald | `app/kanari` |
-| **Sigana** | Zero-login media center | Emerald / Green | https://sigana.lovable.app |
+| **Zabibu Arif** | Workspace & assistant | Amber / Gold | https://zabibuarif.lovable.app |
+| **Arif Agent** | Agentic execution, embedded in Arif | Violet / Teal | https://arifagent.vercel.app |
+| **Zabibu Weaver** | Free, open-source, model-agnostic agent | Violet / Cyan | https://zabibuweaver.vercel.app |
+| **Ella** | Encrypted journal & care companion | Rose / Coral | https://heyella.netlify.app |
+| **Ustadi** | Skills & mastery assistant | — | In development |
+| **Zabibu OS** | Local-first operating layer | Cyan / Teal | https://zabibu.lovable.app |
+| **Sigana** | Free media & streaming | Emerald / Green | https://sigana.lovable.app |
+| **Phosh.cpp** | Open-source llama.cpp edge adapter | Fuchsia / Violet | https://phosh.vercel.app |
+| **Fikra Edge Runtime** | Proprietary runtime for Fikra models | Fuchsia / Violet | https://zabibufikra.vercel.app |
+| **Zabibu Canary** | Pre-release testing & human-in-the-loop | Amber / Red | https://zabibucanary.vercel.app |
+| **Fikra Model 1 - 2B** | 2B local/edge model | Fuchsia / Violet | https://zabibufikra.vercel.app |
+| **Fikra Model 2 - 4B** | 4B advanced model | Fuchsia / Violet | https://zabibufikra.vercel.app |
 
 ---
 
@@ -69,14 +71,13 @@ zabibu.com/
 │   ├── arif/                  # Zabibu Arif Product Portal
 │   ├── hub/                   # Categorized ecosystem hub
 │   ├── phosh/                 # Phosh.cpp edge inference portal
-│   ├── kanari/                # Kanari diagnostics portal
 │   ├── dispatches/            # Field Notes & Medium RSS Feed Page
 │   ├── ella/                  # Ella App Portal
 │   ├── fikra/                 # Fikra Model 1 - 2B portal
 │   ├── sigana/                # Sigana TV Streaming Portal
-│   ├── zabibuos/              # ZabibuOS Operating Layer Portal
+│   ├── zabibuos/              # Zabibu OS Operating Layer Portal
 │   ├── globals.css            # Global Tailwind & elemental styles
-│   └── page.tsx               # Primary categorized ecosystem hub
+│   └── page.tsx               # Primary home story & company pitch
 ├── components/                # Portal shell, categorized hub & cards
 └── public/
     └── images/                # Product screenshots and branding assets

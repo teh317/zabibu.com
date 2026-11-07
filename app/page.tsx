@@ -4,33 +4,33 @@ import { AmbientSlideshow } from '@/components/ambient-slideshow'
 
 const pillars = [
   {
-    tag: 'Cognition',
+    tag: 'Workspace & assistant',
     title: 'Zabibu Arif',
-    text: 'A Socratic workspace for thinking and drafting. Arif Agent is the autonomous execution layer behind it: code, growth, and business operations on one verified core.',
+    text: 'Your main workspace and assistant—the central place where you write, plan, code, and organize your daily work, powered by the Fikra Engine for thoughtful, human-centered interactions.',
     href: 'https://zabibuarif.lovable.app',
     detail: '/arif',
     icon: BrainCircuit,
   },
   {
     tag: 'Operating layer',
-    title: 'ZabibuOS',
-    text: 'A local-first operating layer that treats software as the thing which adapts to the hardware, not the other way around.',
+    title: 'Zabibu OS',
+    text: 'Our elemental web-native local operating layer designed to provide a smooth, unified computing environment.',
     href: 'https://zabibu.lovable.app',
     detail: '/zabibuos',
     icon: Cpu,
   },
   {
-    tag: 'Models & runtime',
+    tag: 'Local model',
     title: 'Fikra Model 1 - 2B',
-    text: 'Small, open reasoning weights for edge hardware. Fikra Edge Runtime is the proprietary sibling runtime for local agentic work.',
+    text: 'Our pioneering 2-billion parameter model built specifically for local execution and edge devices.',
     href: 'https://zabibufikra.vercel.app',
     detail: '/fikra',
     icon: Layers,
   },
   {
-    tag: 'Care',
+    tag: 'Journal & care',
     title: 'Ella',
-    text: 'A private, encrypted journal for the inner life. No cloud, no extraction, and no account required to begin.',
+    text: 'Your encrypted private journal and care companion, designed to guide users through thoughtful reflections on their daily experiences, emotions, and moods.',
     href: 'https://heyella.netlify.app',
     detail: '/ella',
     icon: HeartPulse,
@@ -148,8 +148,9 @@ export default function Home() {
                 Sovereign systems, <span className="text-gradient">shipped.</span>
               </h2>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
-                Four surfaces show the range: cognition, an operating layer, edge models, and
-                care. Each one is built on the same verified core.
+                Four surfaces show the range: an assistant and workspace, a local operating
+                layer, an edge model, and a care companion. Each one is built on the same
+                verified core.
               </p>
             </div>
             <Link

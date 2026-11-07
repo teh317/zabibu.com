@@ -59,7 +59,7 @@ const INITIAL_POSTS: Post[] = [
     location: 'Nairobi HQ',
     category: 'hiring',
     title: 'Open Call: Low-Latency C++ / WebAssembly Core Contributor (Volunteer & Paid)',
-    message: 'We are expanding the ZabibuOS local-first kernel. Looking for devs experienced in Rust, Wasm, or local IndexedDB sync strategies. Use the recruitment form below to submit your dispatch.',
+    message: 'We are expanding the Zabibu OS local-first kernel. Looking for devs experienced in Rust, Wasm, or local IndexedDB sync strategies. Use the recruitment form below to submit your dispatch.',
     upvotes: 42,
     time: '1 day ago',
     isPinned: true,
@@ -76,7 +76,7 @@ const INITIAL_POSTS: Post[] = [
     upvotes: 11,
     time: 'Yesterday',
     replies: [
-      { author: 'Zabibu Core', handle: '@zabibutechnika', text: 'We use CRDTs (Conflict-free Replicated Data Types) client-side. Check out the ZabibuOS architecture notes.', time: '18 hours ago' },
+      { author: 'Zabibu Core', handle: '@zabibutechnika', text: 'We use CRDTs (Conflict-free Replicated Data Types) client-side. Check out the Zabibu OS architecture notes.', time: '18 hours ago' },
     ],
   },
   {
@@ -86,7 +86,7 @@ const INITIAL_POSTS: Post[] = [
     location: 'Lagos, NG',
     category: 'general',
     title: 'The visual design language of African-rooted operating systems',
-    message: 'The Hewani and Ardhi themes in ZabibuOS feel deeply authentic. Software UI should reflect physical ecosystems rather than corporate silicon design.',
+    message: 'The Hewani and Ardhi themes in Zabibu OS feel deeply authentic. Software UI should reflect physical ecosystems rather than corporate silicon design.',
     upvotes: 18,
     time: '2 days ago',
     replies: [],

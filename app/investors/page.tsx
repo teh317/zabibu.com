@@ -36,7 +36,7 @@ const tiers = [
     subtitle: 'Ecosystem deployment & infrastructure partnerships',
     perks: [
       'Commercial licensing rights for LISP & Virosauda IP',
-      'Enterprise ZabibuOS hardware integration support',
+      'Enterprise Zabibu OS hardware integration support',
       'Custom edge model co-development (Fikra engine)',
     ],
     actionText: 'Request Institutional Memo',
@@ -237,7 +237,7 @@ export default function Investors() {
                     rows={3}
                     value={commentary}
                     onChange={(e) => setCommentary(e.target.value)}
-                    placeholder="Share areas of interest (e.g., Fikra Model 1 - 2B licensing, ZabibuOS hardware partnerships, patronage)..."
+                    placeholder="Share areas of interest (e.g., Fikra Model 1 - 2B licensing, Zabibu OS hardware partnerships, patronage)..."
                     className="w-full mt-2 p-3 rounded-xl bg-black border border-white/10 text-white text-sm focus:border-amber-500 focus:outline-none"
                     required
                   />

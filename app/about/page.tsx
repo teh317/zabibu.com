@@ -24,7 +24,7 @@ const timeline = [
   {
     year: '2025–2026',
     title: 'Sovereign Consumer Ecosystem',
-    description: 'Expansion into Zabibu Arif (400+ active users), ZabibuOS, Sigana TV, Ustadi Dashboard, and the LISP security framework.',
+    description: 'Expansion into Zabibu Arif (400+ active users), Zabibu OS, Sigana TV, Ustadi Dashboard, and the LISP security framework.',
   },
 ];
 
@@ -38,7 +38,7 @@ const products = [
   },
   {
     tag: 'OPERATING SYSTEM',
-    title: 'ZabibuOS',
+    title: 'Zabibu OS',
     category: 'Elemental Web-Native Computing',
     desc: 'Modular, human-centered desktop and mobile environment built on the principle of software guiding hardware.',
     link: 'https://zabibu.lovable.app',

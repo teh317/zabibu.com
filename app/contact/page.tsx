@@ -18,7 +18,7 @@ const templates: TemplateOption[] = [
   {
     category: 'Community & Developer',
     emailSubject: 'Community / Developer Outreach',
-    placeholderText: 'Inquiring about open node builds, alpha testing, ZabibuOS prototypes, or community collaboration...',
+    placeholderText: 'Inquiring about open node builds, alpha testing, Zabibu OS prototypes, or community collaboration...',
   },
   {
     category: 'Press & Media',
@@ -67,7 +67,7 @@ const socialLinks = [
 
 const pressReferences = [
   {
-    title: 'ZabibuOS: A Grape-Sized Dream With Giant Ambitions',
+    title: 'Zabibu OS: A Grape-Sized Dream With Giant Ambitions',
     source: 'Medium — By Tehillah Mwangada Kachila',
     link: 'https://zabibutechnika.medium.com/zabibuos-a-grape-sized-dream-with-giant-ambitions-eea8a541bd72',
     date: 'Official Essay',
