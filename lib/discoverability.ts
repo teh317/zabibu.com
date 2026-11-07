@@ -1,4 +1,7 @@
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zabibutechnika.com'
+import { catalogSections } from '@/lib/catalog'
+import { faqItems } from '@/lib/faq'
+
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zabibu.vercel.app'
 
 export const projects = {
   arif: {
@@ -69,6 +72,14 @@ export const projects = {
   },
 } as const
 
+const socialProfiles = [
+  'https://github.com/Zabibu-Technika',
+  'https://x.com/zabibutechnika',
+  'https://linkedin.com/company/zabibutechnika',
+  'https://youtube.com/@zabibutechnika',
+  'https://instagram.com/zabibutechnika',
+]
+
 export function absoluteUrl(path: string) {
   return new URL(path, siteUrl).toString()
 }
@@ -77,21 +88,189 @@ export function projectUrl(project: (typeof projects)[keyof typeof projects]) {
   return project.url.startsWith('/') ? absoluteUrl(project.url) : project.url
 }
 
+function catalogMarkdown() {
+  return catalogSections
+    .map((section) => {
+      const items = section.items
+        .map((item) => {
+          const label = item.href ? `[${item.title}](${item.href})` : item.title
+          return `- ${label}: ${item.text}`
+        })
+        .join('\n')
+      return `### ${section.title}\n${items}`
+    })
+    .join('\n\n')
+}
+
 export function llmsText() {
-  return `# Zabibu Technika\n\n> A Nairobi-rooted technology company building sovereign, local-first systems for thought, commerce, care, and community.\n\n## Start here\n- [About](${absoluteUrl('/about')}): Mission, principles, and Nairobi roots.\n- [Hub](${absoluteUrl('/hub')}): The complete product ecosystem.\n- [Community](${absoluteUrl('/community')}): Join the public conversation.\n\n## Products\n${Object.values(projects).map((p) => `- [${p.name}](${projectUrl(p)}): ${p.description}`).join('\n')}\n\n## Editorial\n- [Dispatches](${absoluteUrl('/dispatches')}): Field notes and product thinking.\n\n<!-- Source: Zabibu Technika public product pages; generated server-side. -->`
+  return `# Zabibu Technika
+
+> Zabibu Technika is an AI and technology company based in Nairobi, Kenya. Founded in 2006 as Grape Technologies, it builds sovereign, local-first software, edge AI models, and operating systems for Africa and the global South.
+
+## Company facts
+- Founded: June 2006 (as Grape Technologies)
+- Headquarters: Nairobi, Kenya
+- Focus: sovereign and local-first software, edge AI, operating systems, agentic tools, and African-language AI.
+- Users: 600+ across Zabibu Arif and Ella.
+- Contact: zabibutechnika@gmail.com
+- Canonical site: ${siteUrl}
+
+## Product ecosystem
+${catalogMarkdown()}
+
+## Key pages
+- [Home](${absoluteUrl('/')}): The company story and pitch.
+- [About](${absoluteUrl('/about')}): Mission, vision, timeline, and research heritage.
+- [Ecosystem Hub](${absoluteUrl('/hub')}): Every product with a plain-language explainer.
+- [Community](${absoluteUrl('/community')}): The public forum and recruitment route.
+- [Investors](${absoluteUrl('/investors')}): Investment thesis and briefing.
+- [Dispatches](${absoluteUrl('/dispatches')}): Field notes and product thinking.
+- [Manifesto](${absoluteUrl('/manifesto')}): The sovereign computing declaration.
+- [Contact](${absoluteUrl('/contact')}): Direct line to the studio.
+- [Why local-first](${absoluteUrl('/alternatives/why-we-are-better')}): A factual cloud-first vs local-first comparison.
+- [Badges](${absoluteUrl('/badges')}): An embeddable badge with descriptive anchor text.
+- [Machine-readable summary](${absoluteUrl('/api/geo/summary')}): JSON for AI systems and search agents.
+
+## Canonical
+${siteUrl}
+
+## Full context
+- [Expanded company and product context for AI systems](${absoluteUrl('/llms-full.txt')})
+
+<!-- Generated server-side from the public Zabibu Technika product catalog. -->
+`
+}
+
+export function llmsFullText() {
+  const faq = faqItems
+    .map((item) => `### ${item.question}\n${item.answer}`)
+    .join('\n\n')
+
+  return `# Zabibu Technika — full context
+
+> AI and technology company in Nairobi, Kenya. Sovereign, local-first software, edge AI models, and operating systems for Africa and the global South.
+
+## Identity
+- Legal / brand name: Zabibu Technika
+- Earlier name: Grape Technologies Inc.
+- Founded: June 2006
+- Founder and lead architect: Tehillah Mwangada Kachila
+- Headquarters: Nairobi, Kenya
+- Area served: Kenya, Africa, and the global South
+- Website: ${siteUrl}
+- Contact: zabibutechnika@gmail.com
+
+## Mission
+Engineering clarity. Designing emotion. Build technologies that are secure, intelligent, and deeply human, bridging art, science, and usability for the global South and beyond.
+
+## Vision
+The sovereign computing paradigm: systems that think, protect, and inspire without extracting data or demanding cloud dependency.
+
+## Why Zabibu Technika exists
+Most software is designed for fast fibre, the newest laptop, a card on file, and a model that speaks English first. Most of the world does not live in that context. Zabibu Technika builds for the actual condition: software that works offline, models that fit a modest machine, interfaces that respect local language and low bandwidth, and systems that keep data with the person who made it.
+
+## Timeline
+- 2006: Founded as Grape Technologies Inc. in Nairobi.
+- 2006–2023: Seventeen years of foundational R&D across adaptive interfaces, security architecture, and intelligent systems.
+- 2023: Published the Agentic Artificial Intelligence paper and introduced the Virosauda perceptual imaging system.
+- Late 2024: Launched Ella, a local-first encrypted journal, serving 200+ users.
+- 2025–2026: Expanded into Zabibu Arif (400+ users), Zabibu OS, Sigana, the Fikra model lineup, Phosh.cpp, Zabibu Canary, and the LISP security framework.
+
+## Products
+${catalogMarkdown()}
+
+## Frequently asked questions
+${faq}
+
+## Social profiles
+${socialProfiles.map((url) => `- ${url}`).join('\n')}
+
+## Canonical
+${siteUrl}
+
+<!-- Full-context file for AI systems and search engines. Generated server-side. -->
+`
 }
 
 export function jsonLd() {
+  const organizationId = `${siteUrl}/#organization`
+  const websiteId = `${siteUrl}/#website`
+  const webPageId = `${siteUrl}/#webpage`
+
   return {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'Organization',
+        '@id': organizationId,
         name: 'Zabibu Technika',
+        alternateName: ['Zabibu', 'Grape Technologies Inc.'],
         url: siteUrl,
-        description: 'A Nairobi-rooted technology company building sovereign, local-first systems.',
+        slogan: 'Tech should feel like home.',
+        description:
+          'Zabibu Technika is an AI and technology company based in Nairobi, Kenya, building sovereign, local-first software, edge AI models, and operating systems for Africa and the global South.',
+        foundingDate: '2006-06',
+        founder: {
+          '@type': 'Person',
+          name: 'Tehillah Mwangada Kachila',
+        },
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'Nairobi',
+          addressCountry: 'KE',
+        },
+        areaServed: [
+          { '@type': 'Country', name: 'Kenya' },
+          { '@type': 'Place', name: 'Africa' },
+          { '@type': 'Place', name: 'Global South' },
+        ],
+        knowsAbout: [
+          'Artificial intelligence',
+          'Edge AI',
+          'Local-first software',
+          'Agentic AI',
+          'African-language AI',
+          'Operating systems',
+          'Open-source software',
+          'Model quantization',
+          'Human-in-the-loop verification',
+        ],
+        logo: {
+          '@type': 'ImageObject',
+          url: absoluteUrl('/icon.png'),
+          width: 500,
+          height: 500,
+        },
+        image: absoluteUrl('/images/og-image.png'),
+        sameAs: socialProfiles,
+        contactPoint: {
+          '@type': 'ContactPoint',
+          email: 'zabibutechnika@gmail.com',
+          contactType: 'customer support',
+          availableLanguage: ['English', 'Swahili'],
+        },
       },
-      { '@type': 'WebSite', name: 'Zabibu Technika', url: siteUrl },
+      {
+        '@type': 'WebSite',
+        '@id': websiteId,
+        url: siteUrl,
+        name: 'Zabibu Technika',
+        description:
+          'Sovereign, local-first AI and software from Nairobi, Kenya, for Africa and the global South.',
+        publisher: { '@id': organizationId },
+        inLanguage: 'en',
+      },
+      {
+        '@type': 'WebPage',
+        '@id': webPageId,
+        url: siteUrl,
+        name: 'Zabibu Technika — AI & Technology Company in Nairobi, Kenya',
+        description:
+          'Zabibu Technika is a Nairobi-rooted AI and technology company building sovereign, local-first software, edge AI models, and operating systems for Africa and the global South.',
+        isPartOf: { '@id': websiteId },
+        about: { '@id': organizationId },
+        inLanguage: 'en',
+      },
     ],
   }
 }
@@ -145,5 +324,8 @@ export function rateLimit(key: string, limit = 10) {
 export function signedRequest(request: Request, body: string) {
   const expected = process.env.INDEXNOW_WEBHOOK_SECRET
   if (!expected) return false
-  return request.headers.get('x-indexnow-signature') === expected && body.length <= 32_000
+  const signature = request.headers.get('x-indexnow-signature')
+  const authorization = request.headers.get('authorization')
+  const bearer = authorization?.startsWith('Bearer ') ? authorization.slice(7) : null
+  return (signature === expected || bearer === expected) && body.length <= 32_000
 }

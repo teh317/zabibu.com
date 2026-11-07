@@ -1,4 +1,13 @@
+import type { Metadata } from 'next';
 import { PortalFrame, SectionHeading } from '@/components/portal-shell';
+import { QuotableSummary } from '@/components/quotable-summary';
+import { aboutPageSchema, JsonLd, pageMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = pageMetadata(
+  'About — AI & Technology Company in Nairobi, Kenya',
+  'Zabibu Technika is an AI and technology company founded in Nairobi, Kenya in 2006. Learn about its mission, 20-year research heritage, and sovereign, local-first products.',
+  '/about'
+);
 
 const timeline = [
   {
@@ -89,6 +98,7 @@ export default function About() {
   return (
 
       <PortalFrame>
+        <JsonLd data={aboutPageSchema()} />
         {/* Header */}
         <SectionHeading
           eyebrow="Company Overview & Heritage"
@@ -99,10 +109,16 @@ export default function About() {
               <span className="text-gradient">Humane computing from Kenya.</span>
             </>
           }
-          copy="Zabibu Technika is an independent research and technology company engineering sovereign software, edge AI frameworks, and secure systems."
+          copy="Zabibu Technika is an AI and technology company based in Nairobi, Kenya, engineering sovereign software, edge AI frameworks, and secure systems."
         />
 
         {/* Quick Facts Strip */}
+        <QuotableSummary cite="Zabibu Technika — company definition">
+          Zabibu Technika is an AI and technology company based in Nairobi, Kenya. Founded in 2006
+          as Grape Technologies, it builds sovereign, local-first software, edge AI models, and
+          operating systems for Africa and the global South.
+        </QuotableSummary>
+
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 my-8 p-6 rounded-2xl bg-white/[0.02] border border-white/10">
           <div>
             <p className="text-xs uppercase tracking-wider text-muted-foreground font-mono">Founded</p>
