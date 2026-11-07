@@ -3,63 +3,69 @@ export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zabibutechni
 export const projects = {
   arif: {
     name: 'Zabibu Arif',
-    description: 'The flagship workspace: a Socratic cognitive engine for the questions underneath the question.',
+    description: 'Your main workspace and assistant—the central place where you write, plan, code, and organize your daily work, powered by the Fikra Engine.',
     url: '/arif',
     site: 'https://zabibuarif.lovable.app',
   },
   arifAgent: {
     name: 'Arif Agent',
-    description: 'The autonomous, multi-axis execution layer behind Zabibu Arif: code, growth, and business operations on one verified core.',
+    description: 'Zabibu Arif’s hyperspecialized sibling for real-world agentic execution, embedded directly inside Zabibu Arif.',
     url: 'https://arifagent.vercel.app',
   },
+  weaver: {
+    name: 'Zabibu Weaver',
+    description: 'Our free, open-source, model-agnostic agent, built to work with any AI model you choose.',
+    url: 'https://zabibuweaver.vercel.app',
+  },
+  ella: {
+    name: 'Ella',
+    description: 'Your encrypted private journal and care companion for thoughtful daily reflection.',
+    url: '/ella',
+    site: 'https://heyella.netlify.app',
+  },
   zabibuos: {
-    name: 'ZabibuOS',
-    description: 'A local-first operating layer for African builders and real-world constraints.',
+    name: 'Zabibu OS',
+    description: 'Our elemental web-native local operating layer for a smooth, unified computing environment.',
     url: '/zabibuos',
     site: 'https://zabibu.lovable.app',
   },
   sigana: {
     name: 'Sigana',
-    description: 'A free, zero-login media center built for low-bandwidth networks.',
+    description: 'Premium TV and streaming. Free, no subscription, no login.',
     url: '/sigana',
     site: 'https://sigana.lovable.app',
   },
-  fikra: {
-    name: 'Fikra Model 1 - 2B',
-    description: 'Small, sharp, open reasoning weights. The family also powers the proprietary Fikra Edge Runtime.',
-    url: '/fikra',
-    site: 'https://zabibufikra.vercel.app',
+  phosh: {
+    name: 'Phosh.cpp',
+    description: 'Our open-source llama.cpp adapter tailored for edge devices, optimizing speed, thermal management, and context distribution.',
+    url: '/phosh',
+    site: 'https://phosh.vercel.app',
+  },
+  fikraEdge: {
+    name: 'Fikra Edge Runtime',
+    description: 'The proprietary version of Phosh.cpp used internally to power and manage Fikra models.',
+    url: 'https://zabibufikra.vercel.app',
   },
   canary: {
     name: 'Zabibu Canary',
-    description: 'A local-first pre-push gate for AI-made changes, with plain-English risk reports and signed human approvals.',
+    description: 'Our pre-release testing channel for code impact across five critical setups, with signed human-in-the-loop evidence.',
     url: 'https://zabibucanary.vercel.app',
   },
-  weaver: {
-    name: 'Weaver',
-    description: 'The open-source coding agent that proves its work: proof receipts, a deterministic gate, and undo without git.',
-    url: 'https://zabibuweaver.vercel.app',
+  fikra: {
+    name: 'Fikra Model 1 - 2B',
+    description: 'Our pioneering 2-billion parameter model, built specifically for local execution and edge devices.',
+    url: '/fikra',
+    site: 'https://zabibufikra.vercel.app',
   },
-  phosh: {
-    name: 'Phosh.cpp',
-    description: 'An open-source, silicon-level optimized edge inference engine for cloud-grade speeds on budget hardware, entirely offline.',
-    url: '/phosh',
-  },
-  kanari: {
-    name: 'Kanari',
-    description: 'A telemetry-free local diagnostic utility for model runtime state, disk pressure, and system health.',
-    url: '/kanari',
+  fikra2: {
+    name: 'Fikra Model 2 - 4B',
+    description: 'Our advanced 4-billion parameter model with deeper training, code-switching, local grounding, vision, and advanced tool use.',
+    url: 'https://zabibufikra.vercel.app',
   },
   bizkit: {
     name: 'Bizkit',
     description: 'Offline-first business tools for the people keeping economies moving.',
     url: '/bizkit',
-  },
-  ella: {
-    name: 'Ella',
-    description: 'An encrypted companion for tending to your inner world.',
-    url: '/ella',
-    site: 'https://heyella.netlify.app',
   },
 } as const
 

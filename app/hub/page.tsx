@@ -20,8 +20,8 @@ export default function Hub() {
             <span className="text-gradient">system.</span>
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
-            The full ecosystem, organized by surface: flagship products, system architecture,
-            developer infrastructure, and experimental media.
+            The full ecosystem, organized by product surface: assistants and companions,
+            operating systems and media, core systems and runtimes, and the Fikra model lineup.
           </p>
         </header>
         <EcosystemHub />

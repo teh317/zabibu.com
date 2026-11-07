@@ -18,16 +18,17 @@ const nav = [
 const ecosystem = [
   { href: 'https://zabibuarif.lovable.app', label: 'Zabibu Arif' },
   { href: 'https://zabibufikra.vercel.app', label: 'Fikra Model 1 - 2B' },
+  { href: 'https://zabibufikra.vercel.app', label: 'Fikra Model 2 - 4B' },
   { href: 'https://heyella.netlify.app', label: 'Ella' },
-  { href: 'https://zabibu.lovable.app', label: 'ZabibuOS' },
+  { href: 'https://zabibu.lovable.app', label: 'Zabibu OS' },
   { href: 'https://sigana.lovable.app', label: 'Sigana' },
 ]
 const developers = [
   { href: 'https://arifagent.vercel.app', label: 'Arif Agent' },
-  { href: 'https://zabibuweaver.vercel.app', label: 'Weaver' },
+  { href: 'https://zabibuweaver.vercel.app', label: 'Zabibu Weaver' },
   { href: 'https://zabibucanary.vercel.app', label: 'Zabibu Canary' },
-  { href: '/phosh', label: 'Phosh.cpp' },
-  { href: '/kanari', label: 'Kanari' },
+  { href: 'https://phosh.vercel.app', label: 'Phosh.cpp' },
+  { href: 'https://zabibufikra.vercel.app', label: 'Fikra Edge Runtime' },
 ]
 const company = [
   { href: '/about', label: 'About' },
