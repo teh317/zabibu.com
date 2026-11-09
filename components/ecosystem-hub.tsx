@@ -30,7 +30,25 @@ function HubCard({ item }: { item: HubItem }) {
   return (
     <article className="group flex h-full flex-col rounded-2xl border border-white/10 bg-[#0b0b0f] p-5 transition-colors hover:border-[#8b2cff]/50 hover:shadow-[0_0_30px_rgba(139,44,255,.08)]">
       <div className="flex items-start justify-between gap-3">
-        <span className="tag whitespace-nowrap">{item.label}</span>
+        <div className="flex min-w-0 items-center gap-3">
+          {item.logo && (
+            <span
+              className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 p-1.5 ${
+                item.logoBg === 'light' ? 'bg-white' : 'bg-black/60'
+              }`}
+            >
+              <img
+                src={item.logo}
+                alt={`${item.title} logo`}
+                width={24}
+                height={24}
+                loading="lazy"
+                className="h-full w-full object-contain"
+              />
+            </span>
+          )}
+          <span className="tag whitespace-nowrap">{item.label}</span>
+        </div>
         {item.meta && (
           <span className="whitespace-nowrap font-mono text-[9px] uppercase tracking-[0.16em] text-white/50">{item.meta}</span>
         )}
