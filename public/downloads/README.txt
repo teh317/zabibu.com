@@ -9,7 +9,7 @@ Contact: zabibutechnika@gmail.com
 CONTENTS
 - logos/        Zabibu Technika wordmarks, badge, social card, product marks
 - icons/        App icon, Apple touch icon, favicon
-- wallpapers/   Six original wallpapers for desktop (3840 × 2160) and mobile (1440 × 3120); previews/ holds the site thumbnails
+- wallpapers/   Eleven original wallpapers for desktop (3840 × 2160) and mobile (1440 × 3120); previews/ holds the site thumbnails
 - audio/        The Zabibu Technika Tune (standard and extended)
 - fonts/        Outfit variable font and OFL license
 - badges/       Embeddable "Built with", "Secured by", "Powered by", "Local-first", and "Made in Nairobi" badges

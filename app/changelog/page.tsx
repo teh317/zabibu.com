@@ -12,6 +12,11 @@ export const metadata: Metadata = pageMetadata(
 const entries = [
   {
     date: '10 November 2026',
+    title: 'Five more wallpapers',
+    body: 'Extended the wallpaper set from six to eleven original designs: Prism, Shard, Ridge, Aperture, and Monolith, each in desktop 3840 × 2160 and mobile 1440 × 3120. Updated the assets page, media kit, media ZIP, and README.',
+  },
+  {
+    date: '10 November 2026',
     title: 'Glipter joins the ecosystem',
     body: 'Added Glipter to the hub: an offline-first, on-device sign language engine that prioritises Kenyan Sign Language. Published a product page with the on-device pipeline, current KSL/ASL/BSL coverage, the published limits of the Tier 0 demonstrator, and the roadmap to a Deaf-reviewed translator. Added the Glipter mark to the logo set, a matching sticker, and updated the ecosystem loop and media kit counts to 13 surfaces.',
   },

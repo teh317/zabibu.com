@@ -141,6 +141,11 @@ export const wallpaperDesigns: WallpaperDesign[] = [
   wallpaper('eclipse', 'Eclipse', 'A dark disc ringed by a thin rim of teal light.'),
   wallpaper('strata', 'Strata', 'A deep dusk horizon glowing violet and amber.'),
   wallpaper('void', 'Void', 'Concentric orbits around a single amber planet.'),
+  wallpaper('prism', 'Prism', 'Teal, violet, and magenta beams refracting through the dark.'),
+  wallpaper('shard', 'Shard', 'Shattered panes of tinted glass catching a cold light.'),
+  wallpaper('ridge', 'Ridge', 'Layered night ridges fading into a violet sky.'),
+  wallpaper('aperture', 'Aperture', 'Three overlapping rings around a single point of light.'),
+  wallpaper('monolith', 'Monolith', 'A doorway of light standing on a dark reflective floor.'),
 ]
 
 export const wallpapers: MediaAsset[] = wallpaperDesigns.flatMap((design) => [
