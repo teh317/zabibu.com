@@ -7,9 +7,9 @@ export default function Hub() {
   return (
     <PortalFrame className="py-10 md:py-16">
       <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-[#8b2cff]/20 blur-[120px]" />
-        <div className="absolute top-1/3 -right-20 h-96 w-96 rounded-full bg-[#00d5bf]/10 blur-[130px]" />
-        <div className="absolute -bottom-20 left-0 h-80 w-80 rounded-full bg-[#ffbf3f]/10 blur-[120px]" />
+        <div className="aurora-blob absolute -top-32 left-1/4 h-80 w-80 rounded-full bg-[#8b2cff]/20 blur-[120px]" />
+        <div className="aurora-blob absolute top-1/3 -right-20 h-96 w-96 rounded-full bg-[#00d5bf]/10 blur-[130px]" />
+        <div className="aurora-blob absolute -bottom-20 left-0 h-80 w-80 rounded-full bg-[#ffbf3f]/10 blur-[120px]" />
       </div>
 
       <div className="hub-shell relative z-10 p-5 md:p-10">

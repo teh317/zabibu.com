@@ -13,6 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/contact',
     '/alternatives/why-we-are-better',
     '/badges',
+    '/media-kit',
+    '/downloads',
+    '/privacy',
+    '/terms',
+    '/trust',
+    '/accessibility',
+    '/changelog',
+    '/licenses',
   ]
 
   const projectPaths = Object.values(projects)
@@ -30,7 +38,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? 0.9
           : path === '/about'
             ? 0.8
-            : path.startsWith('/arif') ||
+            : path === '/media-kit' || path === '/downloads'
+              ? 0.8
+              : path.startsWith('/arif') ||
                 path.startsWith('/fikra') ||
                 path.startsWith('/zabibuos') ||
                 path.startsWith('/sigana') ||
