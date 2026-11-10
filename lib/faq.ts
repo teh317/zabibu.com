@@ -107,7 +107,7 @@ export const faqItems = [
   {
     question: 'What products does Zabibu Technika make?',
     answer:
-      'Zabibu Technika builds Zabibu Arif, Arif Agent, Zabibu Weaver, Ella, Ustadi, Zabibu OS, Sigana, Phosh.cpp, Fikra Edge Runtime, Zabibu Canary, and the Fikra model lineup.',
+      'Zabibu Technika builds Zabibu Arif, Arif Agent, Zabibu Weaver, Ella, Ustadi, Zabibu OS, Sigana, Phosh.cpp, Fikra Edge Runtime, Zabibu Canary, Glipter, and the Fikra model lineup.',
   },
   {
     question: 'What makes Zabibu Technika different from other African tech companies?',

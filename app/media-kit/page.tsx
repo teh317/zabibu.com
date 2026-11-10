@@ -37,7 +37,7 @@ const facts = [
   ['Headquarters', 'Nairobi, Kenya'],
   ['Focus', 'AI, edge models, local-first software'],
   ['Users', '600+ across Arif & Ella'],
-  ['Products', '12 surfaces across AI, OS, media, tooling'],
+  ['Products', '13 surfaces across AI, OS, media, accessibility, tooling'],
   ['Press', 'zabibutechnika@gmail.com'],
 ]
 

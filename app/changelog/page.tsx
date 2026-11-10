@@ -12,6 +12,11 @@ export const metadata: Metadata = pageMetadata(
 const entries = [
   {
     date: '10 November 2026',
+    title: 'Glipter joins the ecosystem',
+    body: 'Added Glipter to the hub: an offline-first, on-device sign language engine that prioritises Kenyan Sign Language. Published a product page with the on-device pipeline, current KSL/ASL/BSL coverage, the published limits of the Tier 0 demonstrator, and the roadmap to a Deaf-reviewed translator. Added the Glipter mark to the logo set, a matching sticker, and updated the ecosystem loop and media kit counts to 13 surfaces.',
+  },
+  {
+    date: '10 November 2026',
     title: 'Media kit, assets page, and the tune',
     body: 'Published the assets page, media kit, press kit, investor kit, and download library: wordmarks, icons, product marks, product social cards, stickers, animated GIFs, badges, banners, avatars, six original 4K desktop and mobile wallpapers, the standard and extended Zabibu Technika Tune, fonts, licensing notes, and the full ZIP bundle. Applied Outfit to the site and the 1200 × 630 website card, added reduced-motion support, focus styles, and trust, privacy, terms, accessibility, and licensing pages.',
   },

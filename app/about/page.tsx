@@ -67,6 +67,13 @@ const products = [
     link: 'https://heyella.netlify.app',
   },
   {
+    tag: 'ACCESSIBILITY & LANGUAGE',
+    title: 'Glipter',
+    category: 'On-Device Sign Language Engine',
+    desc: 'Offline-first sign recognition built for Kenyan Sign Language, with local inference, no upload, and published limits as a Tier 0 demonstrator.',
+    link: 'https://glipter.vercel.app',
+  },
+  {
     tag: 'SECURITY ARCHITECTURE',
     title: 'LISP Protocol',
     category: 'Lux Integrated Security Protocol',

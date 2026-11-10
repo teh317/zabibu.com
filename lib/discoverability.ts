@@ -54,6 +54,12 @@ export const projects = {
     description: 'Our pre-release testing channel for code impact across five critical setups, with signed human-in-the-loop evidence.',
     url: 'https://zabibucanary.vercel.app',
   },
+  glipter: {
+    name: 'Glipter',
+    description: 'An offline-first, on-device sign language engine that prioritises Kenyan Sign Language, with ASL and experimental BSL profiles.',
+    url: '/glipter',
+    site: 'https://glipter.vercel.app',
+  },
   fikra: {
     name: 'Fikra Model 1 - 2B',
     description: 'Our pioneering 2-billion parameter model, built specifically for local execution and edge devices.',

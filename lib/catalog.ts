@@ -96,8 +96,8 @@ export const catalogSections: HubSection[] = [
   {
     number: '03',
     title: 'Core Systems, Runtimes & Testing',
-    note: '03 products',
-    grid: 'lg:grid-cols-3',
+    note: '04 products',
+    grid: 'lg:grid-cols-2',
     items: [
       {
         title: 'Phosh.cpp',
@@ -125,6 +125,15 @@ export const catalogSections: HubSection[] = [
         text: 'Our pre-release testing channel that checks the impact of your code and codebase across 5 critical setups, requiring a signature to create recorded evidence of a human in the loop during development.',
         href: 'https://zabibucanary.vercel.app',
         meta: 'HITL',
+      },
+      {
+        title: 'Glipter',
+        logo: '/images/logos/glipter.svg',
+        logoBg: 'dark',
+        label: 'Sign language engine',
+        text: 'An offline-first, on-device sign language engine. It reads sign through any camera, runs inference locally, and puts Kenyan Sign Language first. A Tier 0 demonstrator with Deaf-led review as the next gate.',
+        href: 'https://glipter.vercel.app',
+        meta: 'Tier 0',
       },
     ],
   },

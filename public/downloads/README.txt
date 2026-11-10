@@ -36,8 +36,10 @@ Zabibu Weaver — MIT.
 Phosh.cpp open edition — MIT.
 Fikra models — see the license on each model card.
 Fikra Edge Runtime — proprietary.
-Sigana, Ella, Zabibu Arif, Arif Agent, Zabibu OS, Ustadi, and Zabibu Canary are
+Sigana, Ella, Zabibu Arif, Arif Agent, Zabibu OS, Ustadi, Zabibu Canary, and Glipter are
 proprietary products unless a product page says otherwise.
+Glipter is a Tier 0 demonstrator; the datasets and models it bundles carry their own
+licences, listed in the app.
 
 The tune is © Zabibu Technika. All rights reserved. Do not remix, redistribute,
 or use it as your own.

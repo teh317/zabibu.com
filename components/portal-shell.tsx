@@ -30,6 +30,7 @@ const developers = [
   { href: 'https://zabibucanary.vercel.app', label: 'Zabibu Canary' },
   { href: 'https://phosh.vercel.app', label: 'Phosh.cpp' },
   { href: 'https://zabibufikra.vercel.app', label: 'Fikra Edge Runtime' },
+  { href: 'https://glipter.vercel.app', label: 'Glipter' },
 ]
 const company = [
   { href: '/about', label: 'About' },

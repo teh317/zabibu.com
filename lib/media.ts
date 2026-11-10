@@ -98,6 +98,7 @@ export const productAssets: MediaAsset[] = [
   asset('Fikra — off-white', 'Fikra model-family mark in the alternate off-white treatment.', '/downloads/logos/products/fikra-offwhite.png', 'PNG'),
   asset('Fikra — colour', 'Fikra model-family mark in colour.', '/downloads/logos/products/fikra.png', 'PNG'),
   asset('Zabibu Canary', 'Product mark for the pre-release testing channel.', '/downloads/logos/products/zabibu-canary.svg', 'SVG'),
+  asset('Glipter', 'Product mark for the on-device sign language engine.', '/downloads/logos/products/glipter.svg', 'SVG'),
 ]
 
 export type WallpaperDesign = {
@@ -250,6 +251,7 @@ export const stickerAssets: MediaAsset[] = [
   asset('Zabibu Canary sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/zabibu-canary-512.png', 'PNG', { dimensions: '512 × 512' }),
   asset('Fikra Model 1 - 2B sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/fikra-model-1-2b-512.png', 'PNG', { dimensions: '512 × 512' }),
   asset('Fikra Model 2 - 4B sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/fikra-model-2-4b-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Glipter sticker', '512 × 512 transparent sticker for the on-device sign language engine.', '/downloads/stickers/glipter-512.png', 'PNG', { dimensions: '512 × 512' }),
 ]
 
 export const gifAssets: MediaAsset[] = [
@@ -257,7 +259,7 @@ export const gifAssets: MediaAsset[] = [
   asset('Fikra heartbeat', 'Animated Fikra heart with the model-family line.', '/downloads/gifs/fikra-heartbeat-600.gif', 'GIF', { preview: '/downloads/gifs/fikra-heartbeat-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
   asset('Weaver proof loop', 'Animated terminal proof sequence for Zabibu Weaver.', '/downloads/gifs/zabibu-weaver-proof-600.gif', 'GIF', { preview: '/downloads/gifs/zabibu-weaver-proof-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
   asset('Canary watch loop', 'Animated canary with a human-in-the-loop scan line.', '/downloads/gifs/zabibu-canary-watch-600.gif', 'GIF', { preview: '/downloads/gifs/zabibu-canary-watch-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
-  asset('Ecosystem loop', 'Animated marquee of the 12-product ecosystem.', '/downloads/gifs/zabibu-ecosystem-loop-600.gif', 'GIF', { preview: '/downloads/gifs/zabibu-ecosystem-loop-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
+  asset('Ecosystem loop', 'Animated marquee of the 13-product ecosystem.', '/downloads/gifs/zabibu-ecosystem-loop-600.gif', 'GIF', { preview: '/downloads/gifs/zabibu-ecosystem-loop-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
 ]
 
 export const assetGroups = [

@@ -36,8 +36,9 @@ export default function Hub() {
         <div className="mb-10">
           <QuotableSummary cite="Zabibu Technika — product ecosystem">
             The Zabibu Technika ecosystem includes AI assistants, agentic tools, local-first
-            operating systems, edge runtimes, testing tools, and the Fikra model lineup. Every
-            product is designed in Nairobi, Kenya for real-world constraints.
+            operating systems, edge runtimes, testing tools, accessibility and sign-language
+            engines, and the Fikra model lineup. Every product is designed in Nairobi, Kenya for
+            real-world constraints.
           </QuotableSummary>
         </div>
         <EcosystemHub />

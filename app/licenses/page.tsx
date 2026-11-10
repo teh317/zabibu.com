@@ -72,9 +72,9 @@ export default function LicensesPage() {
       <section>
         <h2 className="text-xl font-bold text-white">Proprietary products</h2>
         <p className="mt-2">
-          Fikra Edge Runtime, Zabibu Arif, Arif Agent, Zabibu OS, Sigana, Ella, Ustadi, and Zabibu
-          Canary are proprietary unless their own page or agreement says otherwise. Contact the
-          studio for commercial licensing.
+          Fikra Edge Runtime, Zabibu Arif, Arif Agent, Zabibu OS, Sigana, Ella, Ustadi, Zabibu
+          Canary, and Glipter are proprietary unless their own page or agreement says otherwise.
+          Contact the studio for commercial licensing.
         </p>
       </section>
 

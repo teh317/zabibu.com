@@ -45,7 +45,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
                 path.startsWith('/zabibuos') ||
                 path.startsWith('/sigana') ||
                 path.startsWith('/ella') ||
-                path.startsWith('/phosh')
+                path.startsWith('/phosh') ||
+                path.startsWith('/glipter')
               ? 0.8
               : 0.6
 

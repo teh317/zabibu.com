@@ -47,6 +47,7 @@ export const metadata: Metadata = {
     'Zabibu Canary',
     'Ella journal',
     'Sigana',
+    'Glipter sign language',
   ],
   authors: [{ name: 'Tehillah Mwangada Kachila', url: siteUrl }],
   creator: 'Tehillah Mwangada Kachila',
