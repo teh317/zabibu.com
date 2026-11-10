@@ -76,7 +76,7 @@ curl -X POST https://zabibu.vercel.app/api/indexnow \
 ## 🎨 Media kit, assets & trust
 
 - `/media-kit` — approved boilerplate, fact sheet, founder bio, brand assets, colours, typography, usage rules, licensing, wallpapers, press contact, and the official tune.
-- `/assets` - the full asset library: wordmarks, app icons, product marks, product social cards, badges, banners, wallpapers, fonts, PDF kits, and both tune mixes, plus a ZIP bundle.
+- `/assets` - the full asset library: wordmarks, app icons, product marks, product social cards, stickers, animated GIFs, badges, banners, wallpapers, fonts, PDF kits, and both tune mixes, plus a ZIP bundle.
 - `/downloads/audio/zabibu-technika-tune.mp3` and `zabibu-technika-tune-extended.mp3` — the official tune.
 - `/trust` — security posture, local-first data sovereignty, responsible AI, and vulnerability disclosure.
 - `/privacy`, `/terms`, `/accessibility`, `/changelog`, `/licenses` — public policy and posterity pages.

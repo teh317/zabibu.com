@@ -4,6 +4,7 @@ import { ArrowUpRight, Download, FileArchive, Music } from 'lucide-react'
 import { AssetCard } from '@/components/asset-card'
 import { PortalFrame } from '@/components/portal-shell'
 import { QuotableSummary } from '@/components/quotable-summary'
+import { WallpaperCard } from '@/components/wallpaper-card'
 import {
   audioAssets,
   brandAssets,
@@ -13,7 +14,7 @@ import {
   mediaKitBundle,
   pressKit,
   productAssets,
-  wallpapers,
+  wallpaperDesigns,
 } from '@/lib/media'
 import {
   audioObjectSchema,
@@ -272,30 +273,8 @@ export default function MediaKitPage() {
           </h2>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {wallpapers.map((asset) => (
-            <article key={asset.href} className="overflow-hidden rounded-2xl border border-white/10 bg-[#08080b]">
-              <a href={asset.href} download className="block">
-                <img
-                  src={asset.preview}
-                  alt={asset.title}
-                  loading="lazy"
-                  className={`w-full object-cover ${asset.dimensions?.startsWith('1080') ? 'aspect-[9/16]' : 'aspect-video'}`}
-                />
-              </a>
-              <div className="p-4">
-                <h3 className="text-sm font-bold text-white">{asset.title}</h3>
-                <p className="mt-1 font-mono text-[9px] uppercase tracking-[0.14em] text-white/45">
-                  {asset.dimensions} · {asset.size}
-                </p>
-                <a
-                  href={asset.href}
-                  download
-                  className="mt-3 inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffbf3f] hover:text-white"
-                >
-                  Download <Download className="size-3.5" />
-                </a>
-              </div>
-            </article>
+          {wallpaperDesigns.map((design) => (
+            <WallpaperCard key={design.slug} design={design} />
           ))}
         </div>
       </section>

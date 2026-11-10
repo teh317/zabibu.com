@@ -1,7 +1,7 @@
 import { Download } from 'lucide-react'
 import type { MediaAsset } from '@/lib/media'
 
-const imageFormats = new Set(['PNG', 'SVG', 'JPG', 'WEBP'])
+const imageFormats = new Set(['PNG', 'SVG', 'JPG', 'WEBP', 'GIF'])
 
 export function AssetCard({ asset, compact = false }: { asset: MediaAsset; compact?: boolean }) {
   const isImage = imageFormats.has(asset.format) && asset.preview

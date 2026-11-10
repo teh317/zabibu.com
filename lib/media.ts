@@ -100,14 +100,52 @@ export const productAssets: MediaAsset[] = [
   asset('Zabibu Canary', 'Product mark for the pre-release testing channel.', '/downloads/logos/products/zabibu-canary.svg', 'SVG'),
 ]
 
-export const wallpapers: MediaAsset[] = [
-  asset('Nairobi Night — desktop', 'Tech should feel like home. 1920 × 1080.', '/downloads/wallpapers/nairobi-night-1920x1080.jpg', 'JPG', { dimensions: '1920 × 1080' }),
-  asset('Nairobi Night — mobile', 'Tech should feel like home. 1080 × 1920.', '/downloads/wallpapers/nairobi-night-1080x1920.jpg', 'JPG', { dimensions: '1080 × 1920' }),
-  asset('Build From Here — desktop', 'Build from here. 1920 × 1080.', '/downloads/wallpapers/build-from-here-1920x1080.jpg', 'JPG', { dimensions: '1920 × 1080' }),
-  asset('Build From Here — mobile', 'Build from here. 1080 × 1920.', '/downloads/wallpapers/build-from-here-1080x1920.jpg', 'JPG', { dimensions: '1080 × 1920' }),
-  asset('Signal — desktop', 'Sovereign systems, shipped. 1920 × 1080.', '/downloads/wallpapers/signal-1920x1080.jpg', 'JPG', { dimensions: '1920 × 1080' }),
-  asset('Signal — mobile', 'Sovereign systems, shipped. 1080 × 1920.', '/downloads/wallpapers/signal-1080x1920.jpg', 'JPG', { dimensions: '1080 × 1920' }),
+export type WallpaperDesign = {
+  slug: string
+  title: string
+  description: string
+  desktop: MediaAsset
+  mobile: MediaAsset
+}
+
+function wallpaper(slug: string, title: string, description: string): WallpaperDesign {
+  return {
+    slug,
+    title,
+    description,
+    desktop: asset(
+      `${title} — desktop`,
+      `${description} 3840 × 2160.`,
+      `/downloads/wallpapers/${slug}-3840x2160.jpg`,
+      'JPG',
+      {
+        dimensions: '3840 × 2160',
+        preview: `/downloads/wallpapers/previews/${slug}-preview.jpg`,
+      }
+    ),
+    mobile: asset(
+      `${title} — mobile`,
+      `${description} 1440 × 3120.`,
+      `/downloads/wallpapers/${slug}-1440x3120.jpg`,
+      'JPG',
+      { dimensions: '1440 × 3120' }
+    ),
+  }
+}
+
+export const wallpaperDesigns: WallpaperDesign[] = [
+  wallpaper('mesh', 'Mesh', 'Violet, magenta, and teal light pooled into a soft mesh gradient.'),
+  wallpaper('aurora', 'Aurora', 'Teal and violet curtains drifting over a near-black sky.'),
+  wallpaper('ribbon', 'Ribbon', 'Two silk ribbons of light crossing in the dark.'),
+  wallpaper('eclipse', 'Eclipse', 'A dark disc ringed by a thin rim of teal light.'),
+  wallpaper('strata', 'Strata', 'A deep dusk horizon glowing violet and amber.'),
+  wallpaper('void', 'Void', 'Concentric orbits around a single amber planet.'),
 ]
+
+export const wallpapers: MediaAsset[] = wallpaperDesigns.flatMap((design) => [
+  design.desktop,
+  design.mobile,
+])
 
 export const audioAssets: MediaAsset[] = [
   asset(
@@ -143,7 +181,7 @@ export const fontAssets: MediaAsset[] = [
 
 export const mediaKitBundle = asset(
   'Full assets bundle',
-  'Every logo, icon, wallpaper, product card, badge, PDF kit, font, and both tune mixes in one ZIP.',
+  'Every logo, icon, wallpaper, product card, sticker, GIF, badge, PDF kit, font, and both tune mixes in one ZIP.',
   '/downloads/zabibu-technika-media-kit.zip',
   'ZIP',
   { preview: undefined }
@@ -195,6 +233,33 @@ export const badgeAssets: MediaAsset[] = [
 
 export const kitAssets: MediaAsset[] = [mediaKitBundle, pressKit, investorKit]
 
+export const stickerAssets: MediaAsset[] = [
+  asset('Zabibu Technika sticker', '512 × 512 transparent sticker with the wordmark and company line.', '/downloads/stickers/zabibu-technika-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Local-first sticker', '512 × 512 transparent sticker for local-first software.', '/downloads/stickers/local-first-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Made in Nairobi sticker', '512 × 512 transparent sticker for Nairobi-made work.', '/downloads/stickers/made-in-nairobi-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Fikra sticker', '512 × 512 transparent sticker for the Fikra model family.', '/downloads/stickers/fikra-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Zabibu Arif sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/zabibu-arif-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Arif Agent sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/arif-agent-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Zabibu Weaver sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/zabibu-weaver-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Ella sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/ella-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Ustadi sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/ustadi-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Zabibu OS sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/zabibu-os-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Sigana sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/sigana-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Phosh.cpp sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/phosh-cpp-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Fikra Edge Runtime sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/fikra-edge-runtime-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Zabibu Canary sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/zabibu-canary-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Fikra Model 1 - 2B sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/fikra-model-1-2b-512.png', 'PNG', { dimensions: '512 × 512' }),
+  asset('Fikra Model 2 - 4B sticker', '512 × 512 transparent product sticker.', '/downloads/stickers/fikra-model-2-4b-512.png', 'PNG', { dimensions: '512 × 512' }),
+]
+
+export const gifAssets: MediaAsset[] = [
+  asset('Brand loop', 'Animated wordmark and “Tech should feel like home.” loop.', '/downloads/gifs/zabibu-technika-brand-loop-600.gif', 'GIF', { preview: '/downloads/gifs/zabibu-technika-brand-loop-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
+  asset('Fikra heartbeat', 'Animated Fikra heart with the model-family line.', '/downloads/gifs/fikra-heartbeat-600.gif', 'GIF', { preview: '/downloads/gifs/fikra-heartbeat-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
+  asset('Weaver proof loop', 'Animated terminal proof sequence for Zabibu Weaver.', '/downloads/gifs/zabibu-weaver-proof-600.gif', 'GIF', { preview: '/downloads/gifs/zabibu-weaver-proof-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
+  asset('Canary watch loop', 'Animated canary with a human-in-the-loop scan line.', '/downloads/gifs/zabibu-canary-watch-600.gif', 'GIF', { preview: '/downloads/gifs/zabibu-canary-watch-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
+  asset('Ecosystem loop', 'Animated marquee of the 12-product ecosystem.', '/downloads/gifs/zabibu-ecosystem-loop-600.gif', 'GIF', { preview: '/downloads/gifs/zabibu-ecosystem-loop-600-preview.png', dimensions: '600 × 600', note: 'Animated GIF · loops forever' }),
+]
+
 export const assetGroups = [
   {
     id: 'kits',
@@ -237,6 +302,18 @@ export const assetGroups = [
     eyebrow: 'Badges',
     title: 'Embeddable badges',
     items: badgeAssets,
+  },
+  {
+    id: 'stickers',
+    eyebrow: 'Stickers',
+    title: 'Product and brand stickers',
+    items: stickerAssets,
+  },
+  {
+    id: 'gifs',
+    eyebrow: 'GIFs',
+    title: 'Animated loops',
+    items: gifAssets,
   },
   {
     id: 'wallpapers',

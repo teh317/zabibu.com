@@ -2,9 +2,18 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { ArrowUpRight, BookOpen, Download, FileArchive, FileText, Music } from 'lucide-react'
 import { AssetCard } from '@/components/asset-card'
+import { WallpaperCard } from '@/components/wallpaper-card'
 import { PortalFrame } from '@/components/portal-shell'
 import { siteUrl } from '@/lib/discoverability'
-import { assetGroups, audioAssets, investorKit, kitAssets, mediaKitBundle, pressKit } from '@/lib/media'
+import {
+  assetGroups,
+  audioAssets,
+  investorKit,
+  kitAssets,
+  mediaKitBundle,
+  pressKit,
+  wallpaperDesigns,
+} from '@/lib/media'
 import {
   audioObjectSchema,
   breadcrumbSchema,
@@ -15,7 +24,7 @@ import {
 
 export const metadata: Metadata = pageMetadata(
   'Assets — Logos, Icons, Kits & Merch',
-  'The Zabibu Technika asset library: media kit, press kit, investor kit, logos, icons, product marks, product social cards, badges, social banners, wallpapers, fonts, and the official tune.',
+  'The Zabibu Technika asset library: media kit, press kit, investor kit, logos, icons, product marks, product social cards, badges, stickers, animated GIFs, social banners, wallpapers, fonts, and the official tune.',
   '/assets'
 )
 
@@ -35,7 +44,7 @@ export default function AssetsPage() {
         data={webPageSchema({
           name: 'Zabibu Technika assets',
           description:
-            'Media kit, press kit, investor kit, logos, icons, product marks, social cards, badges, banners, wallpapers, fonts, and the official tune.',
+            'Media kit, press kit, investor kit, logos, icons, product marks, social cards, badges, stickers, animated GIFs, banners, wallpapers, fonts, and the official tune.',
           path: '/assets',
         })}
       />
@@ -82,7 +91,7 @@ export default function AssetsPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
           Media kit, press kit, investor kit, logos, icons, product marks, social cards, badges,
-          banners, wallpapers, fonts, and the official tune — in one place.
+          stickers, animated GIFs, banners, wallpapers, fonts, and the official tune — in one place.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -106,6 +115,8 @@ export default function AssetsPage() {
         <a href="#product-cards" className="hover:text-white">Social cards</a>
         <a href="#social" className="hover:text-white">Banners</a>
         <a href="#badges" className="hover:text-white">Badges</a>
+        <a href="#stickers" className="hover:text-white">Stickers</a>
+        <a href="#gifs" className="hover:text-white">GIFs</a>
         <a href="#wallpapers" className="hover:text-white">Wallpapers</a>
         <a href="#audio" className="hover:text-white">Tune</a>
         <a href="#type" className="hover:text-white">Fonts</a>
@@ -184,8 +195,14 @@ export default function AssetsPage() {
                 </article>
               ))}
             </div>
+          ) : group.id === 'wallpapers' ? (
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {wallpaperDesigns.map((design) => (
+                <WallpaperCard key={design.slug} design={design} />
+              ))}
+            </div>
           ) : (
-            <div className={`grid gap-4 sm:grid-cols-2 ${group.id === 'product-cards' || group.id === 'wallpapers' ? 'lg:grid-cols-3' : 'lg:grid-cols-3'}`}>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {group.items.map((asset) => (
                 <AssetCard key={asset.href} asset={asset} compact={group.id === 'icons' || group.id === 'products' || group.id === 'badges'} />
               ))}
