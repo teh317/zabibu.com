@@ -287,7 +287,7 @@ export default function Community() {
         </a>
 
         <a
-          href="https://x.com/zabibutehnika"
+          href="https://x.com/zabibutechnika"
           target="_blank"
           rel="noopener noreferrer"
           className="rounded-2xl border border-cyan-500/30 bg-cyan-950/10 p-5 hover:border-cyan-400 transition-all block"
@@ -295,7 +295,7 @@ export default function Community() {
           <span className="font-mono text-[10px] uppercase tracking-wider text-cyan-400">Public Debates</span>
           <h3 className="text-lg font-bold text-white mt-2">X / Twitter Hub</h3>
           <p className="text-xs text-white/60 mt-1">Philosophical sparring on edge AI and local-first stack.</p>
-          <span className="text-xs font-bold text-cyan-400 mt-4 inline-block">Follow @zabibutehnika ↗</span>
+          <span className="text-xs font-bold text-cyan-400 mt-4 inline-block">Follow @zabibutechnika ↗</span>
         </a>
 
         <a
