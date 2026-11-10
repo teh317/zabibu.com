@@ -151,3 +151,24 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
     })),
   }
 }
+
+export function audioObjectSchema({
+  name,
+  description,
+  contentUrl,
+}: {
+  name: string
+  description: string
+  contentUrl: string
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AudioObject',
+    name,
+    description,
+    contentUrl: contentUrl.startsWith('http') ? contentUrl : `${siteUrl}${contentUrl}`,
+    encodingFormat: 'audio/mpeg',
+    uploadDate: '2026-11-10',
+    creator: { '@id': `${siteUrl}/#organization` },
+  }
+}

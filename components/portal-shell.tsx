@@ -12,6 +12,7 @@ const nav = [
   { href: '/hub', label: 'Hub' },
   { href: '/about', label: 'About' },
   { href: '/community', label: 'Community' },
+  { href: '/media-kit', label: 'Media' },
   { href: '/investors', label: 'Investors' },
   { href: '/dispatches', label: 'Dispatch' },
 ]
@@ -115,9 +116,16 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
         </div>
         <div className="mx-auto mt-12 flex max-w-7xl flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground md:flex-row">
           <span>© {new Date().getFullYear()} Zabibu Technika. All rights reserved.</span>
-          <div className="flex flex-wrap items-center gap-5">
-            <Link href="/">Privacy</Link>
-            <Link href="/">Terms</Link>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
+            <Link href="/media-kit">Media kit</Link>
+            <Link href="/media-kit#tune">Tune</Link>
+            <Link href="/downloads">Downloads</Link>
+            <Link href="/changelog">Changelog</Link>
+            <Link href="/trust">Trust</Link>
+            <Link href="/accessibility">Accessibility</Link>
+            <Link href="/licenses">Licenses</Link>
+            <Link href="/privacy">Privacy</Link>
+            <Link href="/terms">Terms</Link>
             <a href="/llms.txt" className="transition-colors hover:text-white">llms.txt</a>
             <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-accent/80">Designed from Nairobi.</span>
           </div>

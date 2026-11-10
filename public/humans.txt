@@ -1,0 +1,12 @@
+/* TEAM */
+Founder: Tehillah Mwangada Kachila
+Company: Zabibu Technika
+Location: Nairobi, Kenya
+Contact: zabibutechnika@gmail.com
+
+/* SITE */
+Standards: HTML5, CSS3, TypeScript, Next.js
+Components: Next.js, Tailwind CSS, Lucide
+Fonts: Outfit, JetBrains Mono
+Doctype: HTML5
+Language: English

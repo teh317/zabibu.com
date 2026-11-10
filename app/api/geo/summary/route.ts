@@ -35,6 +35,13 @@ export function GET() {
       ],
       products,
       faq: faqItems,
+      media: {
+        kit: `${siteUrl}/media-kit`,
+        downloads: `${siteUrl}/downloads`,
+        tune: `${siteUrl}/downloads/audio/zabibu-technika-tune.mp3`,
+        tuneExtended: `${siteUrl}/downloads/audio/zabibu-technika-tune-extended.mp3`,
+        wallpapers: `${siteUrl}/downloads/wallpapers`,
+      },
       citation: `Zabibu Technika. "AI & technology company in Nairobi, Kenya." ${siteUrl}`,
     },
     {

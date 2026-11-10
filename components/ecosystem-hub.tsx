@@ -43,7 +43,7 @@ function HubCard({ item }: { item: HubItem }) {
                 width={24}
                 height={24}
                 loading="lazy"
-                className="h-full w-full object-contain"
+                className="h-full w-full object-contain transition-transform duration-300 group-hover:scale-105"
               />
             </span>
           )}

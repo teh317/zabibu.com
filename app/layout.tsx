@@ -1,12 +1,21 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { Outfit } from 'next/font/google'
+import { JetBrains_Mono, Outfit } from 'next/font/google'
 import { jsonLd, siteUrl } from '@/lib/discoverability'
 import { OG_IMAGE, OG_IMAGE_ALT } from '@/lib/seo'
 import { PortalShell } from '@/components/portal-shell'
 import './globals.css'
 
-const outfit = Outfit({ subsets: ['latin'], weight: ['300', '400', '600', '700', '900'], variable: '--font-outfit' })
+const outfit = Outfit({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-outfit',
+})
+const mono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-jetbrains',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -105,7 +114,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="bg-background">
-      <body className={`${outfit.variable} antialiased`}>
+      <body className={`${outfit.variable} ${mono.variable} antialiased`}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd()) }} />
         <PortalShell>{children}</PortalShell>
         {process.env.NODE_ENV === 'production' && <Analytics />}

@@ -129,6 +129,14 @@ ${catalogMarkdown()}
 - [Contact](${absoluteUrl('/contact')}): Direct line to the studio.
 - [Why local-first](${absoluteUrl('/alternatives/why-we-are-better')}): A factual cloud-first vs local-first comparison.
 - [Badges](${absoluteUrl('/badges')}): An embeddable badge with descriptive anchor text.
+- [Media kit](${absoluteUrl('/media-kit')}): Brand story, fact sheet, logos, colours, type, licensing, wallpapers, and the official tune.
+- [Downloads](${absoluteUrl('/downloads')}): Logos, icons, product marks, wallpapers, and both tune mixes.
+- [Trust](${absoluteUrl('/trust')}): Security, local-first data posture, responsible AI, and vulnerability disclosure.
+- [Accessibility](${absoluteUrl('/accessibility')}): Accessibility commitment and feedback.
+- [Changelog](${absoluteUrl('/changelog')}): Dated record of public changes.
+- [Licenses](${absoluteUrl('/licenses')}): Brand, content, product, font, icon, and audio licensing.
+- [Privacy](${absoluteUrl('/privacy')}): Data practices.
+- [Terms](${absoluteUrl('/terms')}): Website terms.
 - [Machine-readable summary](${absoluteUrl('/api/geo/summary')}): JSON for AI systems and search agents.
 
 ## Canonical
@@ -178,6 +186,18 @@ Most software is designed for fast fibre, the newest laptop, a card on file, and
 
 ## Products
 ${catalogMarkdown()}
+
+## Media, downloads, and trust
+- Media kit: ${absoluteUrl('/media-kit')}
+- Downloads: ${absoluteUrl('/downloads')}
+- Official tune (standard): ${absoluteUrl('/downloads/audio/zabibu-technika-tune.mp3')}
+- Official tune (extended): ${absoluteUrl('/downloads/audio/zabibu-technika-tune-extended.mp3')}
+- Trust and security: ${absoluteUrl('/trust')}
+- Accessibility: ${absoluteUrl('/accessibility')}
+- Licenses: ${absoluteUrl('/licenses')}
+- Privacy: ${absoluteUrl('/privacy')}
+- Terms: ${absoluteUrl('/terms')}
+- Changelog: ${absoluteUrl('/changelog')}
 
 ## Frequently asked questions
 ${faq}
