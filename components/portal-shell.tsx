@@ -12,7 +12,7 @@ const nav = [
   { href: '/hub', label: 'Hub' },
   { href: '/about', label: 'About' },
   { href: '/community', label: 'Community' },
-  { href: '/media-kit', label: 'Media' },
+  { href: '/assets', label: 'Assets' },
   { href: '/investors', label: 'Investors' },
   { href: '/dispatches', label: 'Dispatch' },
 ]
@@ -119,7 +119,7 @@ export function PortalShell({ children }: { children: React.ReactNode }) {
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <Link href="/media-kit">Media kit</Link>
             <Link href="/media-kit#tune">Tune</Link>
-            <Link href="/downloads">Downloads</Link>
+            <Link href="/assets">Assets</Link>
             <Link href="/changelog">Changelog</Link>
             <Link href="/trust">Trust</Link>
             <Link href="/accessibility">Accessibility</Link>

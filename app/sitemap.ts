@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/alternatives/why-we-are-better',
     '/badges',
     '/media-kit',
-    '/downloads',
+    '/assets',
     '/privacy',
     '/terms',
     '/trust',
@@ -38,7 +38,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ? 0.9
           : path === '/about'
             ? 0.8
-            : path === '/media-kit' || path === '/downloads'
+            : path === '/media-kit' || path === '/assets'
               ? 0.8
               : path.startsWith('/arif') ||
                 path.startsWith('/fikra') ||

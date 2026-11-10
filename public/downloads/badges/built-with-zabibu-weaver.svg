@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="56" viewBox="0 0 260 56" role="img" aria-label="Built with Zabibu Weaver">
+  <title>Built with Zabibu Weaver</title>
+  <rect x="0.5" y="0.5" width="259" height="55" rx="12" fill="#030305" stroke="#2a2440"/>
+  <rect x="8" y="8" width="40" height="40" rx="10" fill="#ff7a18"/>
+  <text x="28" y="36" text-anchor="middle" font-family="Outfit, Segoe UI, sans-serif" font-size="24" font-weight="800" fill="#160c02">W</text>
+  <text x="60" y="23" font-family="Outfit, Segoe UI, sans-serif" font-size="9" letter-spacing="1.4" fill="#a1a1aa">BUILT WITH</text>
+  <text x="60" y="40" font-family="Outfit, Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#f4f1f8">Zabibu Weaver</text>
+</svg>

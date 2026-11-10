@@ -126,15 +126,82 @@ export const audioAssets: MediaAsset[] = [
   ),
 ]
 
+export const fontAssets: MediaAsset[] = [
+  asset(
+    'Outfit variable font',
+    'The primary brand typeface. Variable weights 100–900.',
+    '/downloads/fonts/Outfit.ttf',
+    'TTF'
+  ),
+  asset(
+    'Outfit license',
+    'SIL Open Font License 1.1.',
+    '/downloads/fonts/OFL.txt',
+    'TXT'
+  ),
+]
+
 export const mediaKitBundle = asset(
-  'Full media kit',
-  'Every logo, icon, wallpaper, both tune mixes, and the usage README in one ZIP.',
+  'Full assets bundle',
+  'Every logo, icon, wallpaper, product card, badge, PDF kit, font, and both tune mixes in one ZIP.',
   '/downloads/zabibu-technika-media-kit.zip',
   'ZIP',
   { preview: undefined }
 )
 
+export const pressKit = asset(
+  'Press kit (PDF)',
+  'Fact sheet, approved boilerplate, founder bio, product portfolio, usage notes, and press contact.',
+  '/downloads/zabibu-technika-press-kit.pdf',
+  'PDF',
+  { preview: undefined, dimensions: 'A4 · 4 pages' }
+)
+
+export const investorKit = asset(
+  'Investor kit (PDF)',
+  'Public thesis, traction facts, product portfolio, diligence checklist, and data-room contact.',
+  '/downloads/zabibu-technika-investor-kit.pdf',
+  'PDF',
+  { preview: undefined, dimensions: 'A4 · 4 pages' }
+)
+
+export const productCards: MediaAsset[] = [
+  asset('Zabibu Arif card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/zabibu-arif-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Arif Agent card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/arif-agent-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Zabibu Weaver card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/zabibu-weaver-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Ella card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/ella-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Ustadi card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/ustadi-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Zabibu OS card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/zabibu-os-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Sigana card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/sigana-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Phosh.cpp card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/phosh-cpp-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Fikra Edge Runtime card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/fikra-edge-runtime-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Zabibu Canary card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/zabibu-canary-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Fikra Model 1 - 2B card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/fikra-model-1-2b-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+  asset('Fikra Model 2 - 4B card', '1200 × 630 social card with the product mark and explainer.', '/downloads/products/fikra-model-2-4b-1200x630.jpg', 'JPG', { dimensions: '1200 × 630' }),
+]
+
+export const socialAssets: MediaAsset[] = [
+  asset('Social banner', '1500 × 500 banner for X, LinkedIn, or a project page.', '/downloads/social/zabibu-technika-social-banner-1500x500.jpg', 'JPG', { dimensions: '1500 × 500' }),
+  asset('Profile avatar', '1080 × 1080 avatars for social profiles and community spaces.', '/downloads/social/zabibu-technika-avatar-1080x1080.png', 'PNG', { dimensions: '1080 × 1080' }),
+]
+
+export const badgeAssets: MediaAsset[] = [
+  asset('Built with Zabibu Weaver', 'Embeddable badge for projects built on the open-source agent.', '/downloads/badges/built-with-zabibu-weaver.svg', 'SVG', { dimensions: '260 × 56' }),
+  asset('Secured by Zabibu Canary', 'Badge for projects that pass the human-in-the-loop review gate.', '/downloads/badges/secured-by-zabibu-canary.svg', 'SVG', { dimensions: '260 × 56' }),
+  asset('Powered by Fikra', 'Badge for projects using the Fikra model family.', '/downloads/badges/powered-by-fikra.svg', 'SVG', { dimensions: '260 × 56' }),
+  asset('Local-first', 'Badge for software that works without a mandatory cloud.', '/downloads/badges/local-first.svg', 'SVG', { dimensions: '260 × 56' }),
+  asset('Made in Nairobi', 'Badge for work made in Nairobi, Kenya.', '/downloads/badges/made-in-nairobi.svg', 'SVG', { dimensions: '260 × 56' }),
+]
+
+export const kitAssets: MediaAsset[] = [mediaKitBundle, pressKit, investorKit]
+
 export const assetGroups = [
+  {
+    id: 'kits',
+    eyebrow: 'Start here',
+    title: 'Media, press, and investor kits',
+    items: kitAssets,
+  },
   {
     id: 'brand',
     eyebrow: 'Brand',
@@ -154,6 +221,24 @@ export const assetGroups = [
     items: productAssets,
   },
   {
+    id: 'product-cards',
+    eyebrow: 'Product cards',
+    title: 'Social cards for every product',
+    items: productCards,
+  },
+  {
+    id: 'social',
+    eyebrow: 'Social',
+    title: 'Banners and avatars',
+    items: socialAssets,
+  },
+  {
+    id: 'badges',
+    eyebrow: 'Badges',
+    title: 'Embeddable badges',
+    items: badgeAssets,
+  },
+  {
     id: 'wallpapers',
     eyebrow: 'Wallpapers',
     title: 'Desktop and mobile wallpapers',
@@ -164,6 +249,12 @@ export const assetGroups = [
     eyebrow: 'Audio',
     title: 'The Zabibu Technika Tune',
     items: audioAssets,
+  },
+  {
+    id: 'type',
+    eyebrow: 'Typography',
+    title: 'Brand fonts',
+    items: fontAssets,
   },
 ]
 

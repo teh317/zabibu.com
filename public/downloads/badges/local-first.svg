@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="56" viewBox="0 0 260 56" role="img" aria-label="Local-first, no cloud required">
+  <title>Local-first, no cloud required</title>
+  <rect x="0.5" y="0.5" width="259" height="55" rx="12" fill="#030305" stroke="#2a2440"/>
+  <circle cx="28" cy="28" r="9" fill="#00d5bf"/>
+  <circle cx="28" cy="28" r="17" fill="none" stroke="#00d5bf" stroke-opacity=".35"/>
+  <text x="60" y="23" font-family="Outfit, Segoe UI, sans-serif" font-size="9" letter-spacing="1.4" fill="#a1a1aa">LOCAL-FIRST</text>
+  <text x="60" y="40" font-family="Outfit, Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#f4f1f8">No cloud required</text>
+</svg>

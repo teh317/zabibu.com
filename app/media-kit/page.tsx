@@ -9,7 +9,9 @@ import {
   brandAssets,
   brandColors,
   iconAssets,
+  investorKit,
   mediaKitBundle,
+  pressKit,
   productAssets,
   wallpapers,
 } from '@/lib/media'
@@ -94,10 +96,10 @@ export default function MediaKitPage() {
             Download the full kit ({mediaKitBundle.size}) <Download className="ml-2 size-4" />
           </a>
           <Link
-            href="/downloads"
+            href="/assets"
             className="outline-button pill px-5 py-3 text-[11px] font-bold uppercase tracking-wider"
           >
-            Open the download library <ArrowUpRight className="ml-2 size-4" />
+            Open the asset library <ArrowUpRight className="ml-2 size-4" />
           </Link>
         </div>
       </header>
@@ -218,14 +220,30 @@ export default function MediaKitPage() {
               The primary typeface for headlines, body, and interface. Geometric, high-contrast,
               and set tight. Weights 300–900.
             </p>
-            <a
-              href="https://fonts.google.com/specimen/Outfit"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffbf3f] hover:text-white"
-            >
-              Google Fonts <ArrowUpRight className="size-3.5" />
-            </a>
+            <div className="mt-4 flex flex-wrap items-center gap-3">
+              <a
+                href="https://fonts.google.com/specimen/Outfit"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffbf3f] hover:text-white"
+              >
+                Google Fonts <ArrowUpRight className="size-3.5" />
+              </a>
+              <a
+                href="/downloads/fonts/Outfit.ttf"
+                download
+                className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-[#ffbf3f] hover:text-white"
+              >
+                Download TTF <Download className="size-3.5" />
+              </a>
+              <a
+                href="/downloads/fonts/OFL.txt"
+                download
+                className="inline-flex items-center gap-1.5 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-white/45 hover:text-white"
+              >
+                OFL
+              </a>
+            </div>
           </article>
           <article className="rounded-2xl border border-white/10 bg-[#08080b] p-6 md:p-8">
             <p className="font-mono text-6xl tracking-[-.04em] text-white">Aa</p>
@@ -357,8 +375,14 @@ export default function MediaKitPage() {
           >
             Press contact <ArrowUpRight className="ml-2 size-4" />
           </a>
-          <Link href="/downloads" className="outline-button pill px-5 py-3 text-[11px] font-bold uppercase tracking-wider">
-            All downloads
+          <a href={pressKit.href} download className="outline-button pill px-5 py-3 text-[11px] font-bold uppercase tracking-wider">
+            Press kit PDF
+          </a>
+          <a href={investorKit.href} download className="outline-button pill px-5 py-3 text-[11px] font-bold uppercase tracking-wider">
+            Investor kit PDF
+          </a>
+          <Link href="/assets" className="outline-button pill px-5 py-3 text-[11px] font-bold uppercase tracking-wider">
+            All assets
           </Link>
         </div>
       </section>
