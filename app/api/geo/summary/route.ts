@@ -37,7 +37,7 @@ export function GET() {
       faq: faqItems,
       media: {
         kit: `${siteUrl}/media-kit`,
-        downloads: `${siteUrl}/downloads`,
+        assets: `${siteUrl}/assets`,
         tune: `${siteUrl}/downloads/audio/zabibu-technika-tune.mp3`,
         tuneExtended: `${siteUrl}/downloads/audio/zabibu-technika-tune-extended.mp3`,
         wallpapers: `${siteUrl}/downloads/wallpapers`,

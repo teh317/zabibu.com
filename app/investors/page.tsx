@@ -105,6 +105,23 @@ export default function Investors() {
           copy="Zabibu Technika engineers independent, high-conviction technology for the global South. We welcome patient capital, sovereign angels, and community patrons."
         />
 
+        <div className="mb-10 flex flex-wrap gap-3">
+          <a
+            href="/downloads/zabibu-technika-investor-kit.pdf"
+            download
+            className="glow-button px-5 py-3 text-[11px] font-bold uppercase tracking-wider rounded-xl"
+          >
+            Download investor kit (PDF)
+          </a>
+          <a
+            href="/downloads/zabibu-technika-press-kit.pdf"
+            download
+            className="outline-button px-5 py-3 text-[11px] font-bold uppercase tracking-wider"
+          >
+            Press kit (PDF)
+          </a>
+        </div>
+
         {/* Investment Tiers */}
         <div className="my-12">
           <h3 className="text-xs font-bold uppercase tracking-widest text-accent mb-6">Participation Tiers</h3>

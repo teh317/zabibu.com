@@ -11,6 +11,12 @@ CONTENTS
 - icons/        App icon, Apple touch icon, favicon
 - wallpapers/   Desktop and mobile wallpapers
 - audio/        The Zabibu Technika Tune (standard and extended)
+- fonts/        Outfit variable font and OFL license
+- badges/       Embeddable "Built with", "Secured by", "Powered by", "Local-first", and "Made in Nairobi" badges
+- products/     Product marks and 1200 × 630 social cards for every product
+- social/       Social banner and profile avatar
+- zabibu-technika-press-kit.pdf
+- zabibu-technika-investor-kit.pdf
 
 USAGE
 Brand assets are © Zabibu Technika. All rights reserved.

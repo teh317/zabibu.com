@@ -12,8 +12,8 @@ export const metadata: Metadata = pageMetadata(
 const entries = [
   {
     date: '10 November 2026',
-    title: 'Media kit, downloads, and the tune',
-    body: 'Published the media kit and download library: wordmarks, icons, product marks, desktop and mobile wallpapers, the standard and extended Zabibu Technika Tune, licensing notes, and the full ZIP bundle. Applied Outfit to the site and the 1200 × 630 website card, added reduced-motion support, focus styles, and trust, privacy, terms, accessibility, and licensing pages.',
+    title: 'Media kit, assets page, and the tune',
+    body: 'Published the assets page, media kit, press kit, investor kit, and download library: wordmarks, icons, product marks, product social cards, badges, banners, avatars, desktop and mobile wallpapers, the standard and extended Zabibu Technika Tune, fonts, licensing notes, and the full ZIP bundle. Applied Outfit to the site and the 1200 × 630 website card, added reduced-motion support, focus styles, and trust, privacy, terms, accessibility, and licensing pages.',
   },
   {
     date: '9 November 2026',
@@ -73,8 +73,8 @@ export default function ChangelogPage() {
       </ol>
       <p className="text-sm text-white/40">
         For the asset library, see the{' '}
-        <Link href="/downloads" className="text-[#b887ff] underline underline-offset-2">
-          downloads page
+        <Link href="/assets" className="text-[#b887ff] underline underline-offset-2">
+          assets page
         </Link>
         . For the brand story, see the{' '}
         <Link href="/media-kit" className="text-[#b887ff] underline underline-offset-2">

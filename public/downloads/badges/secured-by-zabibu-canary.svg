@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="56" viewBox="0 0 260 56" role="img" aria-label="Secured by Zabibu Canary">
+  <title>Secured by Zabibu Canary</title>
+  <rect x="0.5" y="0.5" width="259" height="55" rx="12" fill="#030305" stroke="#2a2440"/>
+  <circle cx="28" cy="30" r="16" fill="#f5b73f"/>
+  <circle cx="23" cy="27" r="2.5" fill="#030305"/>
+  <path d="M38 28 L46 31 L38 34 Z" fill="#e8912d"/>
+  <path d="M18 44 H38" stroke="#8a6d24" stroke-width="2" stroke-linecap="round"/>
+  <text x="60" y="23" font-family="Outfit, Segoe UI, sans-serif" font-size="9" letter-spacing="1.4" fill="#a1a1aa">SECURED BY</text>
+  <text x="60" y="40" font-family="Outfit, Segoe UI, sans-serif" font-size="15" font-weight="700" fill="#f4f1f8">Zabibu Canary</text>
+</svg>

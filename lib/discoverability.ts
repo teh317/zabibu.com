@@ -130,7 +130,7 @@ ${catalogMarkdown()}
 - [Why local-first](${absoluteUrl('/alternatives/why-we-are-better')}): A factual cloud-first vs local-first comparison.
 - [Badges](${absoluteUrl('/badges')}): An embeddable badge with descriptive anchor text.
 - [Media kit](${absoluteUrl('/media-kit')}): Brand story, fact sheet, logos, colours, type, licensing, wallpapers, and the official tune.
-- [Downloads](${absoluteUrl('/downloads')}): Logos, icons, product marks, wallpapers, and both tune mixes.
+- [Assets](${absoluteUrl('/assets')}): Logos, icons, product marks, social cards, badges, banners, wallpapers, fonts, PDF kits, and both tune mixes.
 - [Trust](${absoluteUrl('/trust')}): Security, local-first data posture, responsible AI, and vulnerability disclosure.
 - [Accessibility](${absoluteUrl('/accessibility')}): Accessibility commitment and feedback.
 - [Changelog](${absoluteUrl('/changelog')}): Dated record of public changes.
@@ -187,9 +187,11 @@ Most software is designed for fast fibre, the newest laptop, a card on file, and
 ## Products
 ${catalogMarkdown()}
 
-## Media, downloads, and trust
+## Media, assets, and trust
 - Media kit: ${absoluteUrl('/media-kit')}
-- Downloads: ${absoluteUrl('/downloads')}
+- Assets: ${absoluteUrl('/assets')} (logos, icons, product marks, product social cards, badges, banners, avatars, wallpapers, fonts)
+- Press kit PDF: ${absoluteUrl('/downloads/zabibu-technika-press-kit.pdf')}
+- Investor kit PDF: ${absoluteUrl('/downloads/zabibu-technika-investor-kit.pdf')}
 - Official tune (standard): ${absoluteUrl('/downloads/audio/zabibu-technika-tune.mp3')}
 - Official tune (extended): ${absoluteUrl('/downloads/audio/zabibu-technika-tune-extended.mp3')}
 - Trust and security: ${absoluteUrl('/trust')}
